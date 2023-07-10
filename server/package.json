@@ -15,7 +15,8 @@
         "cloudinary": "^1.37.3",
         "express": "^4.17.2",
         "graphql": "^16.3.0",
-        "mongoose": "^7.0.2"
+        "mongoose": "^7.0.2",
+        "multer": "^1.4.5-lts.1"
     },
     "devDependencies": {
         "nodemon": "^2.0.6"
