@@ -3,7 +3,17 @@ const { gql } = require('apollo-server-express');
 //cloudinary
 
 const typeDefs = gql`
-  type Query {
+type User {
+  _id: ID!
+  name: String!
+  email: String!
+  password: String!
+  coverPicId: String
+  friendList: [User]!
+}
+
+
+type Query {
     _: Boolean
   }
 
