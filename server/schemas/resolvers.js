@@ -1,18 +1,22 @@
 require("dotenv").config();
 const cloudinary = require('cloudinary').v2;
 const { AuthenticationError } = require('apollo-server-express');
-const { User, Thought } = require('../models');
+const { User, Post, Comment } = require('../models');
 const { signToken } = require('../utils/auth');
+const user = require("../models/user");
 
 const resolvers = {
     Queries: {
+      getProfile: async () => {
+        return User.find({});
+      }
 
     },
 
 
     Mutation: {
 
-      
+
       uploadPhoto: async (_, { photo }) => {
     //initialize cloudinary
         cloudinary.config({
