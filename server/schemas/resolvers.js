@@ -15,7 +15,29 @@ const resolvers = {
 
 
     Mutation: {
+      // addUser: async (parent, { name, email, password }) => {
+      //   const profile = await Profile.create({ name, email, password });
+      //   const token = signToken(profile);
+  
+      //   return { token, profile };
+      // },
 
+      login: async (parent, { email, password }) => {
+        const profile = await User.findOne({ email });
+  
+        if (!profile) {
+          throw new AuthenticationError('No profile with this email found!');
+        }
+  
+        const correctPw = await profile.isCorrectPassword(password);
+  
+        if (!correctPw) {
+          throw new AuthenticationError('Incorrect password!');
+        }
+  
+        const token = signToken(profile);
+        return { token, profile };
+      },
 
       uploadPhoto: async (_, { photo }) => {
     //initialize cloudinary
