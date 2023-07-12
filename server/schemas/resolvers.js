@@ -5,9 +5,16 @@ const { User, Thought } = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
+    Queries: {
+
+    },
+
+
     Mutation: {
+
+      
       uploadPhoto: async (_, { photo }) => {
-  //initialize cloudinary
+    //initialize cloudinary
         cloudinary.config({
           cloud_name: process.env.CLOUDINARY_NAME,
           api_key: process.env.CLOUDINARY_API_KEY,
