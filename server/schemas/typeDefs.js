@@ -21,7 +21,18 @@ type Post {
   lastEditedAt: String
 }
 
+type Comment {
+  _id: ID!
+  authorId: User!
+  postId: Post
+  authorName: String!
+  commentContent: String!
+  lastEditedAt: String
+}
 type Query {
+  getUser(userId: ID!): User
+  getPost(postId: ID!): Post
+  getComment(commentId: ID!): Comment
     _: Boolean
   }
 
@@ -30,6 +41,9 @@ type Query {
 
   type Mutation {
     uploadPhoto(photo: String): String
+    createUser(name: String!, email: String!, password: String!): User!
+    createPost(authorId: ID!, artist: String, title: String!): Post!
+    createComment(authoerId: ID!, postId: ID!, authorName: String!, commentContent: String!): Comment!
   }
 `;
 
