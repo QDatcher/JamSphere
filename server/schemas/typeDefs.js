@@ -12,6 +12,14 @@ type User {
   friendList: [User]!
 }
 
+type Post {
+  _id: ID!
+  authorId: User!
+  artist: String
+  title: String!
+  comments: [Comment]
+  lastEditedAt: String
+}
 
 type Query {
     _: Boolean
