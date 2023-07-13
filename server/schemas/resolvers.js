@@ -1,13 +1,54 @@
 require("dotenv").config();
 const cloudinary = require('cloudinary').v2;
 const { AuthenticationError } = require('apollo-server-express');
-const { User, Thought } = require('../models');
+const { User, Post, Comment } = require('../models');
 const { signToken } = require('../utils/auth');
+const user = require("../models/user");
 
 const resolvers = {
+    Queries: {
+      // getProfile: async () => {
+      //   return User.find({});
+      // }
+
+      // For homepage
+      //GET all posts (from everybody)
+
+      // for the profile page (w user id):
+      // GET all posts
+      // GET all Favorite posts
+      // GET all friends
+
+
+    },
+
     Mutation: {
+      // signup: async (parent, { firstName, lastName, username, email, password }) => {
+      //   const profile = await Profile.create({ firstName, lastName, username, email, password });
+      //   const token = signToken(profile);
+  
+      //   return { token, profile };
+      // },
+
+      login: async (parent, { email, password }) => {
+        const profile = await User.findOne({ email });
+  
+        if (!profile) {
+          throw new AuthenticationError('No profile with this email found!');
+        }
+  
+        const correctPw = await profile.isCorrectPassword(password);
+  
+        if (!correctPw) {
+          throw new AuthenticationError('Incorrect password!');
+        }
+  
+        const token = signToken(profile);
+        return { token, profile };
+      },
+
       uploadPhoto: async (_, { photo }) => {
-  //initialize cloudinary
+    //initialize cloudinary
         cloudinary.config({
           cloud_name: process.env.CLOUDINARY_NAME,
           api_key: process.env.CLOUDINARY_API_KEY,
