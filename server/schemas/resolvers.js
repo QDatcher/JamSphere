@@ -15,6 +15,10 @@ const resolvers = {
     posts: async () => {
       return await Post.find({});
     },
+    // Get all posts from a specific user
+    userPosts: async (parent, { userId }) => {
+      return await Post.find({ authorId: userId });
+    },
 
   },
 
