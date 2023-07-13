@@ -7,15 +7,24 @@ const user = require("../models/user");
 
 const resolvers = {
     Queries: {
-      getProfile: async () => {
-        return User.find({});
-      }
+      // getProfile: async () => {
+      //   return User.find({});
+      // }
+
+      // For homepage
+      //GET all posts (from everybody)
+
+      // for the profile page (w user id):
+      // GET all posts
+      // GET all Favorite posts
+      // GET all friends
+
 
     },
 
     Mutation: {
-      // signin: async (parent, { name, email, password }) => {
-      //   const profile = await Profile.create({ name, email, password });
+      // signup: async (parent, { firstName, lastName, username, email, password }) => {
+      //   const profile = await Profile.create({ firstName, lastName, username, email, password });
       //   const token = signToken(profile);
   
       //   return { token, profile };
