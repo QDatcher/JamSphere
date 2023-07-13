@@ -7,17 +7,10 @@ const user = require("../models/user");
 
 const resolvers = {
     Queries: {
-      // getProfile: async () => {
-      //   return User.find({});
-      // }
-
-      // For homepage
-      //GET all posts (from everybody)
-
-      // for the profile page (w user id):
-      // GET all posts
-      // GET all Favorite posts
-      // GET all friends
+    // Get specific User (View your profile)
+    user: async (parent, { userId }) => {
+      return await User.findOne({ _id: userId });
+    },
 
 
     },
