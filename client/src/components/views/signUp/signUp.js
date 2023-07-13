@@ -1,7 +1,7 @@
 import {useState} from 'react'
 
 
-const SignUp = () => {
+const SignUpPage = () => {
     const [userName, setUserName] = useState('')
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
@@ -69,4 +69,4 @@ const SignUp = () => {
     )
 }
 
-export default SignUp
+export default SignUpPage;
