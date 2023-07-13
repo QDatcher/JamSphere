@@ -24,6 +24,11 @@ const resolvers = {
       const user = await User.findOne({ _id: userId }).populate('friendList');
       return user.friendList;
     },
+     // Get comments for a specific post
+     postComments: async (parent, { postId }) => {
+      const post = await Post.findOne({ _id: postId }).populate('comments');
+      return post.comments;
+    },
 
   },
 
