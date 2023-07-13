@@ -19,6 +19,11 @@ const resolvers = {
     userPosts: async (parent, { userId }) => {
       return await Post.find({ authorId: userId });
     },
+    // Get all friends of a specific user
+    userFriends: async (parent, { userId }) => {
+      const user = await User.findOne({ _id: userId }).populate('friendList');
+      return user.friendList;
+    },
 
   },
 
