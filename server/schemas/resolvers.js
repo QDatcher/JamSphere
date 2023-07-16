@@ -6,14 +6,14 @@ const { signToken } = require('../utils/auth');
 const user = require("../models/user");
 
 const resolvers = {
-  Queries: {
+  Query: {
     // Get specific User (View your profile)
-    user: async (parent, { userId }) => {
+    getUser: async (parent, { userId }) => {
       return await User.findOne({ _id: userId });
     },
     // Get all posts from everyone
-    posts: async () => {
-      return await Post.find({});
+    getPost: async (parent, { postId }) => {
+      return await Post.findOne({ _id: postId });
     },
     // Get all posts from a specific user
     userPosts: async (parent, { userId }) => {
@@ -25,20 +25,20 @@ const resolvers = {
       return user.friendList;
     },
      // Get comments for a specific post
-     postComments: async (parent, { postId }) => {
-      const post = await Post.findOne({ _id: postId }).populate('comments');
-      return post.comments;
+     getComment: async (parent, { commentId }) => {
+      return await Comment.findOne({ _id: commentId });
     },
+  
 
   },
 
   Mutation: {
-    // signup: async (parent, { firstName, lastName, username, email, password }) => {
-    //   const profile = await Profile.create({ firstName, lastName, username, email, password });
-    //   const token = signToken(profile);
+    signup: async (parent, { firstName, lastName, username, email, password }) => {
+      const profile = await Profile.create({ firstName, lastName, username, email, password });
+      const token = signToken(profile);
 
-    //   return { token, profile };
-    // },
+      return { token, profile };
+    },
 
     login: async (parent, { email, password }) => {
       const profile = await User.findOne({ email });
