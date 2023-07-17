@@ -18,16 +18,16 @@ const LoginPage = () => {
     return (
         <>
             <section>
-                <h2>Login</h2>
+                <h2 style={{color: "black", fontSize: "24px", font-weight: bold, text-align: center}}>Login</h2>
                 <form onSubmit={onLoginSubmit}>
-                <label>Email</label><br/>
+                <label style={{color: "blue", fontSize: "16px", font-weight: bold}}>Email</label><br/>
                     <input 
                         type='email' 
                         name="email"
                         placeholder="Email"
                         onChange={event => setEmail(event.target.value)}>
                     </input><br/><br/>
-                    <label>Password</label><br/>
+                    <label style={{color: "blue", fontSize: "16px", font-weight: bold}}>Password</label><br/>
                     <input 
                         type='password'
                         name="password" 
