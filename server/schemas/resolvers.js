@@ -1,8 +1,8 @@
 require("dotenv").config();
-const cloudinary = require('cloudinary').v2;
-const { AuthenticationError } = require('apollo-server-express');
-const { User, Post, Comment } = require('../models');
-const { signToken } = require('../utils/auth');
+const cloudinary = require("cloudinary").v2;
+const { AuthenticationError } = require("apollo-server-express");
+const { User, Post, Comment } = require("../models");
+const { signToken } = require("../utils/auth");
 const user = require("../models/user");
 
 const resolvers = {
@@ -21,20 +21,27 @@ const resolvers = {
     },
     // Get all friends of a specific user
     userFriends: async (parent, { userId }) => {
-      const user = await User.findOne({ _id: userId }).populate('friendList');
+      const user = await User.findOne({ _id: userId }).populate("friendList");
       return user.friendList;
     },
-     // Get comments for a specific post
-     getComment: async (parent, { commentId }) => {
+    // Get comments for a specific post
+    getComment: async (parent, { commentId }) => {
       return await Comment.findOne({ _id: commentId });
     },
-  
-
   },
 
   Mutation: {
-    signup: async (parent, { firstName, lastName, username, email, password }) => {
-      const profile = await Profile.create({ firstName, lastName, username, email, password });
+    signup: async (
+      parent,
+      { firstName, lastName, username, email, password }
+    ) => {
+      const profile = await Profile.create({
+        firstName,
+        lastName,
+        username,
+        email,
+        password,
+      });
       const token = signToken(profile);
 
       return { token, profile };
@@ -44,13 +51,13 @@ const resolvers = {
       const profile = await User.findOne({ email });
 
       if (!profile) {
-        throw new AuthenticationError('No profile with this email found!');
+        throw new AuthenticationError("No profile with this email found!");
       }
 
       const correctPw = await profile.isCorrectPassword(password);
 
       if (!correctPw) {
-        throw new AuthenticationError('Incorrect password!');
+        throw new AuthenticationError("Incorrect password!");
       }
 
       const token = signToken(profile);
@@ -74,7 +81,7 @@ const resolvers = {
           //generates a new id for each uploaded image
           public_id: "",
           /*creates a folder called "your_folder_name" where images will be stored.
-          */
+           */
           folder: "your_folder_name",
         });
       } catch (e) {
@@ -86,6 +93,17 @@ const resolvers = {
       */
       return `Successful-Photo URL: ${result.url}`;
     },
+  },
+  deletePost: async (parent, { postId }) => {
+    // Implement the logic to delete a post by postId
+    const deletedPost = await Post.findByIdAndDelete(postId);
+    return deletedPost;
+  },
+
+  deleteUser: async (parent, { userId }) => {
+    // Implement the logic to delete a user by userId
+    const deletedUser = await User.findByIdAndDelete(userId);
+    return deletedUser;
   },
 };
 

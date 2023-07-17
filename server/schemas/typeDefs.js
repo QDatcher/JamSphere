@@ -48,6 +48,8 @@ type Mutation {
   createComment(authorId: ID!, postId: ID!, authorName: String!, commentContent: String!): Comment!
   login(email: String!, password: String!): AuthData!
   signup(firstName: String!, lastName: String!, username: String!): AuthData!
+  deletePost(postId: ID!): Post
+  deleteUser(userId: ID!): User
 }
 `;
 
