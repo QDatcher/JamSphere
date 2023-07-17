@@ -93,17 +93,17 @@ const resolvers = {
       */
       return `Successful-Photo URL: ${result.url}`;
     },
-  },
-  deletePost: async (parent, { postId }) => {
-    // Implement the logic to delete a post by postId
-    const deletedPost = await Post.findByIdAndDelete(postId);
-    return deletedPost;
-  },
+    deletePost: async (parent, { postId }) => {
+      // Implement the logic to delete a post by postId
+      const deletedPost = await Post.findByIdAndDelete(postId);
+      return deletedPost;
+    },
 
-  deleteUser: async (parent, { userId }) => {
-    // Implement the logic to delete a user by userId
-    const deletedUser = await User.findByIdAndDelete(userId);
-    return deletedUser;
+    deleteUser: async (parent, { userId }) => {
+      // Implement the logic to delete a user by userId
+      const deletedUser = await User.findByIdAndDelete(userId);
+      return deletedUser;
+    },
   },
 };
 
