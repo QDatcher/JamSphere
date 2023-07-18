@@ -1,4 +1,6 @@
 import './App.css';
+import React from 'react';
+import SignUpPage from './components/views/signUp/signUp';
 
 function App() {
 
@@ -8,8 +10,8 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1 className='text-3xl font-bold underline'>Hello World!</h1>
-        <p className='p-10 m-10 underline'>
+        <SignUpPage />
+        {/* <p className='p-10 m-10 underline'>
           Edit <code>src/App.js</code> and save to reload.
         </p>
         <a
@@ -19,9 +21,8 @@ function App() {
           rel="noopener noreferrer"
         >
           Learn React
-        </a>
+        </a> */}
       </header>
-      
     </div>
   );
 }
