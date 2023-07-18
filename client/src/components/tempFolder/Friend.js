@@ -16,3 +16,5 @@ const Friend = ({username, profileUrl}) => {
         </>
     )
 }
+
+export default Friend
