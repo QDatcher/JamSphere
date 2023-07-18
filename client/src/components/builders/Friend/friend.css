@@ -1,0 +1,9 @@
+.profile {
+    display: flex;
+    align-items: center;
+}
+
+.profile img {
+    margin-right: 10px;
+    /*Spacing between the picture and username*/
+}
