@@ -1,11 +1,15 @@
 import './App.css';
 
 function App() {
+
+  
+
+
   return (
     <div className="App">
       <header className="App-header">
         <h1 className='text-3xl font-bold underline'>Hello World!</h1>
-        <p>
+        <p className='p-10 m-10 underline'>
           Edit <code>src/App.js</code> and save to reload.
         </p>
         <a
@@ -17,6 +21,7 @@ function App() {
           Learn React
         </a>
       </header>
+      
     </div>
   );
 }
