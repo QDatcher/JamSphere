@@ -33,11 +33,10 @@ const resolvers = {
   Mutation: {
     signup: async (
       parent,
-      { firstName, lastName, username, email, password }
+      { name, username, email, password }
     ) => {
-      const profile = await Profile.create({
-        firstName,
-        lastName,
+      const profile = await user.create({
+        name,
         username,
         email,
         password,

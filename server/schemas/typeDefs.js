@@ -43,11 +43,10 @@ type AuthData {
 
 type Mutation {
   uploadPhoto(photo: String): String
-  createUser(name: String!, email: String!, password: String!): User!
   createPost(authorId: ID!, artist: String, title: String!): Post!
   createComment(authorId: ID!, postId: ID!, authorName: String!, commentContent: String!): Comment!
   login(email: String!, password: String!): AuthData!
-  signup(firstName: String!, lastName: String!, username: String!): AuthData!
+  signup(name: String!, username: String!, email: String!, password: String!): AuthData!
   deletePost(postId: ID!): Post
   deleteUser(userId: ID!): User
 }
