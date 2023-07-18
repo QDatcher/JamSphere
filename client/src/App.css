@@ -1,5 +1,21 @@
+body {
+  background-image: url("./components/images/jamsphere\ background.avif");
+  background-size: cover;
+}
+
+.signup-section {  
+  border-radius: 40px;
+  border: 2px solid aqua;
+  padding: 20px;
+  margin-top: 110%;
+  background-color: rgba(0, 255, 255, 0.196);
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 .App {
-  text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 .App-logo {
@@ -13,8 +29,8 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
+/* .App-header {
+  background-color: #8da1c8;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -22,7 +38,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
+} */
 
 .App-link {
   color: #61dafb;
