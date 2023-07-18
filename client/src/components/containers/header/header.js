@@ -1,10 +1,12 @@
 import React from 'react';
+import "../../builders/nav";
 
-const Header = ({})=> {
+const Header = ({ }) => {
 
     return (
-        <header>
+        <><header>
             <h1>JamSphere</h1>
-        </header>
+        </header><Nav></Nav></>
     )
 }
+export default Header
