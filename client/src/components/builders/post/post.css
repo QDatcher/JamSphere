@@ -1,0 +1,25 @@
+div {
+    display: flex;
+}
+
+#postPhoto {
+    flex: 1;
+}
+
+img {
+    height: 100%;
+    width: auto;
+}
+
+#postUsername {
+    color: #555;
+}
+
+#postTitle {
+    font-weight: bold;
+    margin-top: 0;
+}
+
+#postArtist {
+    margin-bottom: 10px;
+}
