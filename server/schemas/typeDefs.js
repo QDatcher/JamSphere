@@ -7,7 +7,7 @@ type User {
   email: String!
   password: String!
   coverPicId: String
-  friendList: [User]!
+  friendList: [User]
 }
 
 type Post {
