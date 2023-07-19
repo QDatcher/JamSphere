@@ -1,0 +1,24 @@
+body {
+  background-image: url("./components/images/jamsphere\ background.avif");
+  background-size: cover;
+}
+
+.signup-section {  
+  border-radius: 40px;
+  border: 2px solid aqua;
+  padding: 20px;
+  margin-top: 110%;
+  background-color: rgba(0, 255, 255, 0.196);
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}

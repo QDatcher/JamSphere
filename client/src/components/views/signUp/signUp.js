@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import React, { useState } from 'react';
 
 
 const SignUpPage = () => {
@@ -24,7 +24,7 @@ const SignUpPage = () => {
     }
     return (
         <>
-            <section>
+            <section className='signup-section'>
                 <h2>SignUp</h2>
                 <form onSubmit={onSubmitHandler}>
                     <label>First Name</label><br/>
@@ -32,38 +32,39 @@ const SignUpPage = () => {
                         type='text' 
                         name="firstName"
                         placeholder="First Name"
-                        onChange={event => setFirstName(event.target.value)}>
-                    </input><br/><br/>
+                        onChange={event => setFirstName(event.target.value)}
+                    />
+                    <br/><br/>
                     <label>Last Name</label><br/>
                     <input 
                         type='text'
                         name="lastName" 
                         placeholder="Last Name"
-                        onChange={event => setLastName(event.target.value)}>
-                    </input><br/><br/>
+                        onChange={event => setLastName(event.target.value)} />
+                    <br/><br/>
                     <label>UserName</label><br/>
                     <input 
                         type='text'
                         name="username" 
                         placeholder="Username"
-                        onChange={event => setUserName(event.target.value)}>
-                    </input><br/><br/>
+                        onChange={event => setUserName(event.target.value)} />
+                    <br/><br/>
                     <label>Email</label><br/>
                     <input 
                         type='email'
                         name="email" 
                         placeholder="Email"
-                        onChange={event => setEmail(event.target.value)}>
-                    </input><br/><br/>
+                        onChange={event => setEmail(event.target.value)} />
+                    <br/><br/>
                     <label>Password</label><br/>
                     <input 
                         type='password'
                         name="password" 
                         placeholder="Password"
-                        onChange={event => setPassword(event.target.value)}>
-                    </input><br/><br/>
-                    <input type="submit">Submit</input>
-                </form>
+                        onChange={event => setPassword(event.target.value)} />
+                    <br/><br/>
+                    <button type="submit">Submit</button>
+                </form>                 
             </section>
         </>
     )

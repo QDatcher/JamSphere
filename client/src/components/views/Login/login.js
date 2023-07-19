@@ -1,5 +1,5 @@
-import {useState} from 'react'
-
+import React, { useState } from 'react';
+import 'client/src/components/views/login/login.css';
 const LoginPage = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -17,7 +17,7 @@ const LoginPage = () => {
 
     return (
         <>
-            <section>
+            <section classname='loginInfo'>
                 <h2>Login</h2>
                 <form onSubmit={onLoginSubmit}>
                 <label>Email</label><br/>
