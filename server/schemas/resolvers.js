@@ -63,6 +63,26 @@ const resolvers = {
       return { token, profile };
     },
 
+    createPost: async (parent, { artist, title, songURL }, context) => {
+      if (context.user) {
+          const newPost = await Post.create({
+              authorId: context.user._id,
+              artist: artist,
+              title: title,
+              songURL: songURL
+          });
+  
+          await User.findOneAndUpdate(
+              { _id: context.user._id },
+              { $addToSet: { posts: newPost._id } }
+          );
+  
+          return newPost;
+      }
+  
+      throw new AuthenticationError('You need to be logged in!');
+  },
+
     uploadPhoto: async (_, { photo }) => {
       //initialize cloudinary
       cloudinary.config({

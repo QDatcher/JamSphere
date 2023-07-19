@@ -15,6 +15,7 @@ type Post {
   authorId: User!
   artist: String
   title: String!
+  songURL: String! 
   comments: [Comment]
   lastEditedAt: String
 }
@@ -43,7 +44,7 @@ type AuthData {
 
 type Mutation {
   uploadPhoto(photo: String): String
-  createPost(authorId: ID!, artist: String, title: String!): Post!
+  createPost(authorId: ID!, artist: String, title: String!, songURL: String!): Post!
   createComment(authorId: ID!, postId: ID!, authorName: String!, commentContent: String!): Comment!
   login(email: String!, password: String!): AuthData!
   signup(name: String!, username: String!, email: String!, password: String!): AuthData!

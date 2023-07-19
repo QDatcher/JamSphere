@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Post = ({ artist, title, photo, username }) => {
+const Post = ({ artist, title, photo, username, songURL }) => {
 
     return (
         <div>
@@ -10,9 +10,19 @@ const Post = ({ artist, title, photo, username }) => {
             <br></br>
             <h3 id="postTitle">{title}</h3>
             <h2 id="postArtist">{artist}</h2>
+            <iframe  src={songURL} title="Link To Song"/>
         </div>
     )
 
 }
 
-export default Post
+// Post.propTypes = {
+//     artist: PropTypes.string.isRequired,
+//     title: PropTypes.string.isRequired,
+//     photo: PropTypes.string.isRequired,
+//     username: PropTypes.string.isRequired,
+//     songURL: PropTypes.string.isRequired,
+// };
+
+
+export default Post;
