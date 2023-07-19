@@ -1,29 +1,39 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const userSchema = {
-  name: {
-    type: String,
-    required: true
+const userSchema = new Schema(
+  {
+    name: {
+      type: String,
+      required: true
+    },
+    email: {
+      type: String,
+      required: true,
+      unique: true,
+      match: [/.+@.+\..+/, 'Must match an email address!'],
+    },
+    password: {
+      type: String,
+      required: true
+    },
+    coverPicId: {
+      type: String
+    },
+    friendList: {
+      type: [Schema.Types.ObjectId],
+      ref: 'User'
+    },
   },
-  email: {
-    type: String,
-    required: true,
-    unique: true,
-    match: [/.+@.+\..+/, 'Must match an email address!'],
-  },
-  password: {
-    type: String,
-    required: true
-  },
-  coverPicId: {
-    type: String
-  },
-  friendList: {
-    type: [Schema.Types.ObjectId],
-    ref: 'User'
+  //code to make the virtuals work
+  {
+    toJSON: {
+      virtuals: true,
+    },
   }
-};
+);
+
+//VIRTUALS------------------------------------
 
 //encrypting password
 userSchema.pre('save', async function (next) {
