@@ -1,9 +1,9 @@
 require("dotenv").config();
-const cloudinary = require("cloudinary").v2;
+const cloudinary = require("cloudinary");
 const { AuthenticationError } = require("apollo-server-express");
 const { User, Post, Comment } = require("../models");
 const { signToken } = require("../utils/auth");
-const user = require("../models/user");
+// const user = require("../models/user");
 
 const resolvers = {
   Query: {
@@ -35,7 +35,7 @@ const resolvers = {
       parent,
       { name, username, email, password }
     ) => {
-      const profile = await user.create({
+      const profile = await User.create({
         name,
         username,
         email,
@@ -83,25 +83,23 @@ const resolvers = {
       throw new AuthenticationError('You need to be logged in!');
   },
 
-    uploadPhoto: async (_, { photo }) => {
+    uploadPhoto: async ( _, { photo } ) => {
       //initialize cloudinary
       cloudinary.config({
         cloud_name: process.env.CLOUDINARY_NAME,
         api_key: process.env.CLOUDINARY_API_KEY,
         api_secret: process.env.CLOUDINARY_API_SECRET,
       });
-      /*
-      try-catch block for handling actual image upload
-      */
+      
+      //try-catch block for handling actual image upload
       try {
         const result = await cloudinary.v2.uploader.upload(photo, {
-          //here i chose to allow only jpg and png upload
+          //Only jpg and png files can be uploaded
           allowed_formats: ["jpg", "png"],
           //generates a new id for each uploaded image
           public_id: "",
-          /*creates a folder called "your_folder_name" where images will be stored.
-           */
-          folder: "your_folder_name",
+          //creates a folder called "JamSphere" where images will be stored.
+          folder: "JamSphere",
         });
       } catch (e) {
         //returns an error message on image upload failure.
