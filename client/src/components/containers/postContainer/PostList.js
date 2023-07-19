@@ -1,4 +1,4 @@
-
+import Post from '../../builders/post/post'
 
 
 const PostsList = ({posts}) => {
@@ -9,7 +9,7 @@ const PostsList = ({posts}) => {
                 <h3>Posts</h3>
                 <div>
                     {posts.map((post) => {
-                        <Post artist={post.artist} username={post.username} title={post.title} photo={post.photo} />
+                        return <Post artist={post.artist} username={post.username} title={post.title} photo={post.photo} />
                     })}
 
                 </div>

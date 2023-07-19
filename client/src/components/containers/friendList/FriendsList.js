@@ -1,4 +1,4 @@
-import Friend from '../../tempFolder/Friend'
+import Friend from "../../builders/Friend/friend";
 
 
 const FriendList = ({friends}) => {
@@ -9,7 +9,7 @@ const FriendList = ({friends}) => {
                 <h3>Friends List</h3>
                 <div>
                     {friends.map((friend) => {
-                        <Friend profileUrl={friend.profileUrl} username={friend.username} />
+                       return <Friend profileUrl={friend.profileURL} username={friend.username} />
                     })}
 
                 </div>
