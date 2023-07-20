@@ -1,6 +1,15 @@
 import './App.css';
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import SignUpPage from './components/views/signUp/signUp';
+import PageLayout from './components/layout/PageLayout';
+import Profile from './components/views/Profile/Profile';
+import LoginPage from './components/views/Login/login'
+const client = new ApolloClient({
+  uri: '/graphql',
+  cache: new InMemoryCache(),
+});
 
 function App() {
 
@@ -8,22 +17,33 @@ function App() {
 
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <SignUpPage />
-        {/* <p className='p-10 m-10 underline'>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a> */}
-      </header>
-    </div>
+    <ApolloProvider client={client}>
+      
+      <Router>
+        <PageLayout/> 
+          <Routes>
+            {/* <Route
+              path="/"
+              element={<Homepage />}
+            /> */}
+            <Route
+              path="/profile"
+              element={<Profile />}
+            />
+            <Route
+              path="/sign-up"
+              element={<SignUpPage />}
+            />
+            <Route
+              path="/log-in"
+              element={<LoginPage />}
+            />
+          </Routes>
+
+
+      </Router>
+  
+    </ApolloProvider>
   );
 }
 

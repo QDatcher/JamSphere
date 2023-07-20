@@ -1,12 +1,12 @@
-import "../containers/header"
 
+import Header from '../containers/header/header'
 
-const pageLayout = ({ children }) => {
+const PageLayout = ({ children }) => {
 
     return (
         <>
             <div>
-                <Header></Header>
+                <Header />
             </div>
 
             {children}
@@ -14,4 +14,4 @@ const pageLayout = ({ children }) => {
     )
 }
 
-export default pageLayout
+export default PageLayout;
