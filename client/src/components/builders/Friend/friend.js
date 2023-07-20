@@ -3,11 +3,17 @@ import './friend.css';
 
 const Friend = ({ profileURL, username }) => {
     return (
-        <div class="profile">
-            <img src={profileURL} alt="Profile Picture"></img>
-            <p>@{username}</p>
-        </div>
+        <>    
+            <a href="*">
+                <div>
+                    <div>
+                        <img alt={`${username} profile pic`} src={profileURL}></img>
+                    </div>
+                    <p>{username}</p>
+                </div>
+            </a>
+        </>
     )
 }
 
-export default Friend
+export default Friend;
