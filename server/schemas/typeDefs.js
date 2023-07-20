@@ -31,6 +31,7 @@ type Comment {
 }
 
 type Query {
+  _: Boolean
   getUser(userId: ID!): User
   getPost(postId: ID!): Post
   userPosts(userId: ID!): [Post]
