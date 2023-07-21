@@ -7,6 +7,11 @@ const Profile = () => {
     const [myPosts, setMyPosts] = useState(true)
     const [myFriends, setMyFriends] = useState(false)
     const [myFavorites, setMyFavorites] = useState(false)
+    const [friends, setFriend] = useState([])
+    const [name, setName] = useState('Name')
+    const [username, setUserName] = useState('userName');
+    const userPosts = []
+    const favorites = []
 
     const toggleMyPosts = (e) => {
         e.preventDefault()

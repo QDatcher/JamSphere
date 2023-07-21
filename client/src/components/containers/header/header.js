@@ -1,12 +1,17 @@
 import React from 'react';
-import "../../builders/nav";
+import Nav from '../../builders/nav/nav';
 
-const Header = ({ }) => {
+
+const Header = () => {
 
     return (
-        <><header>
-            <h1>JamSphere</h1>
-        </header><Nav></Nav></>
+        <>
+            <header>
+                <h1>JamSphere</h1>
+                <Nav />
+            </header>
+            
+        </>
     )
 }
-export default Header
+export default Header;
