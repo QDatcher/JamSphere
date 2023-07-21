@@ -1,18 +1,41 @@
 import React, { useState } from 'react';
 import './login.css';
+import { useMutation } from '@apollo/client';
+
+
 const LoginPage = () => {
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
+    const [formState, setFormState] = useState({ email: '', password: '' });
+    const [login, { error, data }] = useMutation(LOGIN_USER);
+  
+    // update state based on form input changes
+    const handleChange = (event) => {
+      const { name, value } = event.target;
+  
+      setFormState({
+        ...formState,
+        [name]: value,
+      });
+    };
 
     const onLoginSubmit = (e) => {
+``
+    e.preventDefault();
+    console.log(formState);
+    try {
+      const { data } = await login({
+        variables: { ...formState },
+      });
 
-        e.preventdefault()
-        const formData = {email, password};
+      Auth.login(data.login.token);
+    } catch (e) {
+      console.error(e);
+    }
 
-        console.log(formData)
-
-        setEmail('')
-        setPassword('')
+    // clear form values
+    setFormState({
+      email: '',
+      password: '',
+    });
     }
 
     return (
@@ -34,6 +57,13 @@ const LoginPage = () => {
                         placeholder="Password"
                         onChange={event => setPassword(event.target.value)}>
                     </input><br/><br/>
+                    <button
+                        className='btn btn-block btn-info'
+                        style={{cursor: 'pointser'}}
+                        type='submit'
+                        >
+                            submit
+                        </button>
                 </form>
             </section>
         </>

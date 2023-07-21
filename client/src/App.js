@@ -3,9 +3,10 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import SignUpPage from './components/views/signUp/signUp';
-import PageLayout from './components/layout/PageLayout';
+// import PageLayout from './components/layout/PageLayout';
 import Profile from './components/views/Profile/Profile';
-import LoginPage from './components/views/Login/login'
+import LoginPage from './components/views/Login/login';
+
 const client = new ApolloClient({
   uri: '/graphql',
   cache: new InMemoryCache(),
@@ -13,14 +14,11 @@ const client = new ApolloClient({
 
 function App() {
 
-  
-
-
   return (
     <ApolloProvider client={client}>
       
       <Router>
-        <PageLayout/> 
+        {/* <PageLayout/>  */}
           <Routes>
             {/* <Route
               path="/"
