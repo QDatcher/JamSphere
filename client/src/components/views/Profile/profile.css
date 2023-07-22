@@ -1,0 +1,25 @@
+.profile-container {
+    display: flex;
+    align-items: flex-start;
+}
+
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.profile-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.username {
+    font-weight: bold;
+}
+
+.profile-window {
+    width: 100%;
+}
