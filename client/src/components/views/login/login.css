@@ -1,13 +1,12 @@
 #loginInfo {
     max-width: 55vw;
-    /* Adjust the max-width to fit within the screen */
     margin: 0 auto;
-    /* Center the form horizontally */
     padding: 5vw;
-    /* Use viewport units for responsive padding */
+    margin-top: 2vh;
     background-color: #30638E;
     border-radius: 8px;
-    color: #003D5B;
+    color: #121212;
+    box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.2);
 }
 
 
@@ -16,6 +15,7 @@
     text-align: center;
     margin-bottom: 4vh;
     font-weight: bolder;
+
 }
 
 #loginInfo label {
@@ -36,11 +36,10 @@
 
 /* Apply styles to the input fields inside the .loginInfo section */
 #loginInfo input {
-    flex: 1;
-    margin-bottom: 1vh;
-    padding: 1vh;
-    font-size: 2vh;
-    border: 1px
+    padding: 2vh;
+    font-size: 1vw;
+    border: 1px solid #003D5B;
+    border-radius: 4px;
 }
 
 #loginInfo button {
@@ -49,6 +48,7 @@
     width: 100%;
     color: white;
     border: none;
+    margin-top:1.2vh;
     padding: 2vh 4vw;
     font-size: 1.2vw;
     border-radius: 4px;
@@ -56,6 +56,6 @@
     transition: background-color 0.3s ease;
 }
 
-button:hover {
+#loginInfo button:hover {
     background-color: #D1495B;
 }

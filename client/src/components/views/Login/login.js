@@ -19,7 +19,7 @@ const LoginPage = () => {
     return (
         <>
             <section classname='loginInfo' id="loginInfo">
-                <h2>Login</h2>
+                <h2>Log In</h2>
                 <form onSubmit={onLoginSubmit}>
                     <label>Email</label><br />
                     <input

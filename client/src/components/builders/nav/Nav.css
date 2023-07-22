@@ -12,6 +12,7 @@ ul {
 li {
     padding: 10px;
     font-size: 4.2vh;
+    font-weight: bold;
     /* Add some padding for spacing */
 }
 
