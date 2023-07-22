@@ -8,4 +8,4 @@ const ProfileWindow=({}) => {
     )
 
 }
-export default ProfileWindow
+export default ProfileWindow;

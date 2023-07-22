@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../containers/profileWindow';
+import ProfileWindow from '../../containers/profileWindow/ProfileWindow';
 import './profile.css';
 
 const Profile = ({ username, firstName, lastName, coverPicId }) => {
@@ -13,3 +13,5 @@ const Profile = ({ username, firstName, lastName, coverPicId }) => {
         </div>
     )
 }
+
+export default Profile;
