@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './signup.css';
 
 
 const SignUpPage = () => {
@@ -25,7 +26,7 @@ const SignUpPage = () => {
     return (
         <>
             <section className='signup-section'>
-                <h2>SignUp</h2>
+                <h2>Sign Up</h2>
                 <form onSubmit={onSubmitHandler}>
                     <label>First Name</label><br/>
                     <input 

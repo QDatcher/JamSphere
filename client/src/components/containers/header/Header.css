@@ -1,0 +1,16 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    padding-left: 1vw;
+    font-size: 6vh;
+    /* You can adjust the font size as needed */
+}
+
+nav {
+    display: flex;
+    /* Add any other styles for your nav, like background color, padding, etc. */
+}
