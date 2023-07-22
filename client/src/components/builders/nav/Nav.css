@@ -3,7 +3,7 @@ nav {
     padding: 0;
 }
 
-/* Use flexbox to create a horizontal layout */
+
 ul {
     list-style: none;
     display: flex;
@@ -11,11 +11,24 @@ ul {
 
 li {
     padding: 10px;
+    font-size: 4.2vh;
     /* Add some padding for spacing */
 }
 
-li:hover {
-    color: #111;
+#home:hover {
+    color: #EDAE49;
+    transform: scale(1.2);
+    text-shadow: none;
+}
+
+#signup:hover {
+    color: #00798C;
+    transform: scale(1.2);
+    text-shadow: none;
+}
+
+#login:hover {
+    color: #D1495B;
     transform: scale(1.2);
     text-shadow: none;
 }
