@@ -3,7 +3,6 @@ const cloudinary = require("cloudinary");
 const { AuthenticationError } = require("apollo-server-express");
 const { User, Post, Comment } = require("../models");
 const { signToken } = require("../utils/auth");
-// const user = require("../models/user");
 
 const resolvers = {
   Query: {
