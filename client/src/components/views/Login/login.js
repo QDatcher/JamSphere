@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import './login.css';
 import { useMutation } from '@apollo/client';
+import { LOGIN_USER } from '../utils/mutations';
 
+import Auth from '../utils/auth';
 
 const LoginPage = () => {
     const [formState, setFormState] = useState({ email: '', password: '' });
@@ -17,8 +19,8 @@ const LoginPage = () => {
       });
     };
 
-    const onLoginSubmit = (e) => {
-``
+    const onLoginSubmit = async (e) => {
+
     e.preventDefault();
     console.log(formState);
     try {
