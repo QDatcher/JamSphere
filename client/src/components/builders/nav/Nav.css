@@ -1,0 +1,49 @@
+nav {
+    margin: 0;
+    padding: 0;
+}
+
+/* Use flexbox to create a horizontal layout */
+ul {
+    list-style: none;
+    display: flex;
+}
+
+li {
+    padding: 10px;
+    /* Add some padding for spacing */
+}
+
+/*On hover effect found from codepen*/
+nav.shift ul li a {
+    position: relative;
+    z-index: 1;
+}
+
+nav.shift ul li a:hover {
+    color: #91640F;
+}
+
+nav.shift ul li a:after {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    width: 100%;
+    height: 1px;
+    content: '.';
+    color: transparent;
+    background: #F1C40F;
+    visibility: none;
+    opacity: 0;
+    z-index: -1;
+}
+
+nav.shift ul li a:hover:after {
+    opacity: 1;
+    visibility: visible;
+    height: 100%;
+}
