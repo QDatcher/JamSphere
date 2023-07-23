@@ -33,3 +33,9 @@ li {
     transform: scale(1.2);
     text-shadow: none;
 }
+
+#profile:hover {
+    color: #00798C;
+    transform: scale(1.2);
+    text-shadow: none;
+}
