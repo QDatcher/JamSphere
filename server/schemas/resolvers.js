@@ -62,13 +62,14 @@ const resolvers = {
       return { token, profile };
     },
 
-    createPost: async (parent, { artist, title, songURL }, context) => {
+    createPost: async (parent, { artist, title, songURL, postText }, context) => {
       if (context.user) {
           const newPost = await Post.create({
               authorId: context.user._id,
               artist: artist,
               title: title,
-              songURL: songURL
+              songURL: songURL,
+              postText: postText
           });
   
           await User.findOneAndUpdate(

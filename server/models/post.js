@@ -9,13 +9,24 @@ const postSchema = new Schema(
       ref: "User",
       required: true,
     },
-    photo: {
-      type: String,
-    },
+    // photo: {
+    //   type: String,
+    // },
     artist: {
       type: String,
     },
     title: {
+      type: String,
+      required: true,
+    },
+    postText: {
+      type: String,
+      required: 'You need to leave a thought!',
+      minlength: 1,
+      maxlength: 280,
+      trim: true,
+    },
+    songURL: {
       type: String,
       required: true,
     },

@@ -16,7 +16,8 @@ type Post {
   authorId: User!
   artist: String
   title: String!
-  songURL: String! 
+  songURL: String!
+  postText: String!
   comments: [Comment]
   lastEditedAt: String
 }
@@ -30,6 +31,11 @@ type Comment {
   lastEditedAt: String
 }
 
+type AuthData {
+  token: ID!
+  profile: User!
+}
+
 type Query {
   _: Boolean
   getUser(userId: ID!): User
@@ -39,14 +45,9 @@ type Query {
   getComment(commentId: ID!): Comment
 }
 
-type AuthData {
-  token: String!
-  profile: User!
-}
-
 type Mutation {
   uploadPhoto(photo: String): String
-  createPost(authorId: ID!, artist: String, title: String!, songURL: String!): Post!
+  createPost(authorId: ID!, artist: String, title: String!, songURL: String!, postText: String!): Post!
   createComment(authorId: ID!, postId: ID!, authorName: String!, commentContent: String!): Comment!
   login(email: String!, password: String!): AuthData!
   signup(name: String!, username: String!, email: String!, password: String!): AuthData!

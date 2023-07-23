@@ -10,7 +10,8 @@ const userSchema = new Schema(
     },
     username: {
       type: String,
-      required: true
+      required: true,
+      unique: true,
     },
     email: {
       type: String,
@@ -20,25 +21,24 @@ const userSchema = new Schema(
     },
     password: {
       type: String,
-      required: true
+      required: true,
+      minlength: 4,
     },
-    coverPicId: {
-      type: String
-    },
+    // coverPicId: {
+    //   type: String
+    // },
     friendList: {
       type: [Schema.Types.ObjectId],
       ref: 'User'
     },
   },
-  //code to make the virtuals work
-  {
-    toJSON: {
-      virtuals: true,
-    },
-  }
+  // //code to make the virtuals work
+  // {
+  //   toJSON: {
+  //     virtuals: true,
+  //   },
+  // }
 );
-
-//VIRTUALS------------------------------------
 
 //encrypting password
 userSchema.pre('save', async function (next) {
