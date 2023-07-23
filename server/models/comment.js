@@ -22,7 +22,6 @@ const commentSchema = new Schema(
       required: true,
       minlength: 1,
       maxlength: 280,
-      trim: true,
     },
     lastEditedAt: {
       type: Date,
