@@ -1,0 +1,20 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FCF7F8;
+}
+
+h1 {
+    padding-left: 1vw;
+    font-size: 8vh;
+    font-weight: bold;
+    background: linear-gradient(to right, #EDAE49, #D1495B, #00798C, #003D5B);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+nav {
+    display: flex;
+
+}

@@ -1,24 +1,64 @@
-body {
-  background-image: url("./components/images/jamsphere\ background.avif");
-  background-size: cover;
+.signup-section {
+  max-width: 55vw;
+  margin: 0 auto;
+  padding: 5vw;
+  margin-top: 2vh;
+  background-color: #30638E;
+  border-radius: 8px;
+  color: #121212;
+  box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.2);
 }
 
-.signup-section {  
-  border-radius: 40px;
-  border: 2px solid aqua;
-  padding: 20px;
-  margin-top: 110%;
-  background-color: rgba(0, 255, 255, 0.196);
-  color: white;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+.signup-section h2 {
+  font-size: 2.5vw;
+  text-align: center;
+  margin-bottom: 1vh;
+  font-weight: bolder;
+
 }
 
-.App {
+
+.signup-section label,
+.signup-section input {
+  display: block;
+  width: 100%;
+
+}
+
+.signup-section label {
+  font-weight: bold;
+}
+
+
+.signup-section form {
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+.signup-section input {
+  padding: 2vh;
+  font-size: 1vw;
+  border: 1px solid #003D5B;
+  border-radius: 4px;
+}
+
+
+.signup-section button[type="submit"] {
+  background-color: #EDAE49;
+  font-weight: bold;
+  width: 100%;
+  color: white;
+  margin-top: 1.2vh;
+  border: none;
+  padding: 2vh 4vw;
+  font-size: 1.2vw;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.signup-section button[type="submit"]:hover {
+  background-color: #D1495B;
 }

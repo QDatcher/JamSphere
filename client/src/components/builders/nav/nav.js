@@ -1,13 +1,13 @@
 import React from 'react';
-
+import "./Nav.css";
 const Nav = () => {
 
     return (
         <nav>
             <ul>
-                <a href="*"><li>Home</li></a>
-                <a href="*"><li>Sign Up</li></a>
-                <a href="*"><li>Log In</li></a>
+                <a href="*"><li id="home">Home</li></a>
+                <a href="/sign-up"><li id="signup">Sign Up</li></a>
+                <a href="/log-in"><li id="login">Log In</li></a>
             </ul>
         </nav>
     )
