@@ -11,7 +11,7 @@ import Profile from './components/views/Profile/Profile';
 import LoginPage from './components/views/Login/Login';
 
 
-import PageLayout from './components/Layout/PageLayout';
+import PageLayout from './components/layout/PageLayout';
 const client = new ApolloClient({
   uri: '/graphql',
   cache: new InMemoryCache(),
