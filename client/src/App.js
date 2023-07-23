@@ -5,7 +5,7 @@ import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 
 
 import SignUpPage from './components/views/signUp/SignUp';
-import Profile from './components/views/Profile/Profile';
+import Profile from './components/views/profile/Profile';
 import LoginPage from './components/views/Login/Login';
 
 
@@ -22,9 +22,9 @@ function App() {
 
       <Router>
 
-        <PageLayout/> 
-          <Routes>
-            {/* <Route
+        <PageLayout />
+        <Routes>
+          {/* <Route
 
         <PageLayout />
         <Routes>
