@@ -19,6 +19,17 @@ const postSchema = new Schema(
       type: String,
       required: true,
     },
+    postText: {
+      type: String,
+      required: 'You need to leave a thought!',
+      minlength: 1,
+      maxlength: 280,
+      trim: true,
+    },
+    songURL: {
+      type: String,
+      required: true,
+    },
     comments: {
       type: [Schema.Types.ObjectId],
       ref: "Comment",
