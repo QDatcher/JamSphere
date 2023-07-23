@@ -1,43 +1,83 @@
 import React, { useState } from 'react';
 import './login.css';
 import { useMutation } from '@apollo/client';
-import { LOGIN_USER } from '../utils/mutations';
+import { LOGIN_USER } from '../../../utils/mutations';
 
-import Auth from '../utils/auth';
+import Auth from '../../../utils/auth';
 
 const LoginPage = () => {
-    const [formState, setFormState] = useState({ email: '', password: '' });
-    const [login, { error, data }] = useMutation(LOGIN_USER);
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    console.log(email)
+    console.log(password)
+
+
+
+    const [login, { error }] = useMutation(LOGIN_USER)
+    // const [formState, setFormState] = useState({ email: '', password: '' });
+    // const [login, { error, data }] = useMutation(LOGIN_USER);
   
     // update state based on form input changes
     const handleChange = (event) => {
-      const { name, value } = event.target;
+    //   const { name, value } = event.target;
   
-      setFormState({
-        ...formState,
-        [name]: value,
-      });
+    //   setFormState({
+    //     ...formState,
+    //     [name]: value,
+    //   });
     };
 
     const onLoginSubmit = async (e) => {
 
     e.preventDefault();
-    console.log(formState);
-    try {
-      const { data } = await login({
-        variables: { ...formState },
-      });
+    const formData = {email, password};
+    console.log("formData",formData)
 
-      Auth.login(data.login.token);
-    } catch (e) {
-      console.error(e);
+
+    const form = e.currentTarget;
+    if (form.checkValidity() === false) {
+        e.preventDefault();
+        e.stopPropagation();
     }
 
-    // clear form values
-    setFormState({
-      email: '',
-      password: '',
-    });
+    try{
+        const { data } = await login({
+            variables: {...formData},
+        })
+        console.log("data ",data)
+        Auth.login(data.login.token)
+
+
+        // auth.login()
+
+    } catch (e) {
+        console.log(e)
+    }
+    setEmail('')
+    setPassword('')
+
+
+
+
+
+    // console.log(formState);
+    
+    // try {
+    //   const { data } = await login({
+    //     variables: { ...formState },
+    //   });
+
+    //   Auth.login(data.login.token);
+    // } catch (e) {
+    //   console.error(e);
+    // }
+
+    // // clear form values
+    // setFormState({
+    //   email: '',
+    //   password: '',
+    // });
+
     }
 
     return (
@@ -59,13 +99,13 @@ const LoginPage = () => {
                         placeholder="Password"
                         onChange={event => setPassword(event.target.value)}>
                     </input><br/><br/>
-                    <button
+                    {/* <button
                         className='btn btn-block btn-info'
                         style={{cursor: 'pointser'}}
                         type='submit'
                         >
-                            submit
-                        </button>
+                            Submit
+                        </button> */}
                 </form>
             </section>
         </>
