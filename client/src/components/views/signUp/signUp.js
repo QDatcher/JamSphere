@@ -84,7 +84,7 @@ const SignUpPage = () => {
                         onChange={handleInputChange}
                         value={userFormData.password} />
                     <label>Choose Your Profile Picture</label>
-                    <img src="../../images/Profile1.png" onClick={() => selectProfile('Profile1.png')} className="profile-img" alt="Profile 1" />
+                    <img src='../../images/Profile1.png' onClick={() => selectProfile('Profile1.png')} className="profile-img" alt="Profile 1" />
                     <img src="../../images/Profile2.png" onClick={() => selectProfile('Profile2.png')} className="profile-img" alt="Profile 2" />
                     <img src="../../images/Profile3.png" onClick={() => selectProfile('Profile3.png')} className="profile-img" alt="Profile 3" />
 
