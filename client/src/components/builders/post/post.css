@@ -1,25 +1,54 @@
-div {
+
+.post-container {
+    max-width: 90vw;
+    margin: 0 auto;
     display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #30638E;
+    border-radius: 8px;
+    color: #003D5B;
+    padding: 5vw;
 }
 
-#postPhoto {
-    flex: 1;
+
+#postPhoto img {
+    width: 100%;
+    border-radius: 4px;
 }
 
-img {
-    height: 100%;
-    width: auto;
+
+.post-container h2 {
+    font-size: 1.5vw;
+    margin-bottom: 1vh;
 }
 
-#postUsername {
-    color: #555;
+
+.post-container h3 {
+    font-size: 1vw;
+    margin-bottom: .5vh;
 }
 
-#postTitle {
+
+.post-container iframe {
+    width: 100%;
+    height: 50vh;
+    margin-bottom: 2vh;
+}
+
+
+.post-container button {
+    background-color: #EDAE49;
     font-weight: bold;
-    margin-top: 0;
+    color: white;
+    border: none;
+    padding: 2vh 4vw;
+    font-size: 1.2vw;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-#postArtist {
-    margin-bottom: 10px;
+.post-container button:hover {
+    background-color: #D1495B;
 }

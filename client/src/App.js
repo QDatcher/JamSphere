@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 
 import SignUpPage from './components/views/SignUp/SignUp';
+
+
 import Profile from './components/views/Profile/Profile';
 import LoginPage from './components/views/Login/Login';
 
