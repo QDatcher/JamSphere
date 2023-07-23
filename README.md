@@ -1,10 +1,12 @@
-# <Your-Project-Title>
+# JamSphere
 
 ## Description
 
-Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
+Jamsphere is the ultimate platform for discovering new music. We give users the ability to post and share song recommendations from their favorite artists or genres. Jamsphere makes it easy to find what you want, when you want it. With unlimited music streaming options, discover your next musical obsession with just a few clicks!
+
 
 - What was your motivation?
+- 
 - Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
 - What problem does it solve?
 - What did you learn?
