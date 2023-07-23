@@ -32,7 +32,7 @@ function App() {
               element={<Homepage />}
             /> */}
           <Route
-            path="/profile"
+            path="/Profile"
             element={<Profile />}
           />
           <Route
@@ -40,7 +40,7 @@ function App() {
             element={<SignUpPage />}
           />
           <Route
-            path="/log-in"
+            path="/Login"
             element={<LoginPage />}
           />
         </Routes>
