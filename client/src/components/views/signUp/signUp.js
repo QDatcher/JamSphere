@@ -11,6 +11,7 @@ const SignUpPage = () => {
         username: '',
         email: '',
         password: '',
+        coverPicId: '',
     });
 
     const [signupUser] = useMutation(SIGNUP_USER);
@@ -38,9 +39,13 @@ const SignUpPage = () => {
             username: '',
             email: '',
             password: '',
+            coverPicId: '',
         });
     };
 
+    const selectProfile = (src) => {
+        setUserFormData({ ...userFormData, coverPicId: src });
+    };
     return (
         <>
             <section className='signup-section'>
@@ -78,6 +83,11 @@ const SignUpPage = () => {
                         placeholder="Password"
                         onChange={handleInputChange}
                         value={userFormData.password} />
+                    <label>Choose Your Profile Picture</label>
+                    <img src="../../images/Profile1.png" onClick={() => selectProfile('Profile1.png')} className="profile-img" alt="Profile 1" />
+                    <img src="../../images/Profile2.png" onClick={() => selectProfile('Profile2.png')} className="profile-img" alt="Profile 2" />
+                    <img src="../../images/Profile3.png" onClick={() => selectProfile('Profile3.png')} className="profile-img" alt="Profile 3" />
+
                     <br /><br />
                     <button type="submit">Submit</button>
                 </form>

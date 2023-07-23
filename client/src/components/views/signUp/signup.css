@@ -44,6 +44,20 @@
   border-radius: 4px;
 }
 
+.profile-img {
+  cursor: pointer;
+  width: 100px;
+  height: 100px;
+  margin-right: 10px;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  transition: border-color 0.3s;
+}
+
+/* Style for the selected profile image */
+.profile-img.selected {
+  border-color: #EDAE49;
+}
 
 .signup-section button[type="submit"] {
   background-color: #EDAE49;
