@@ -7,6 +7,7 @@ import SignUpPage from './components/views/SignUp/SignUp';
 
 
 import Profile from './components/views/Profile/Profile';
+
 import LoginPage from './components/views/Login/Login';
 
 
@@ -23,9 +24,9 @@ function App() {
 
       <Router>
 
-        <PageLayout/> 
-          <Routes>
-            {/* <Route
+        <PageLayout />
+        <Routes>
+          {/* <Route
 
         <PageLayout />
         <Routes>
