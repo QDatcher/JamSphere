@@ -3,7 +3,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import SignUpPage from './components/views/signUp/signUp';
-import PageLayout from './components/layout/PageLayout';
+import PageLayout from './components/layout/pageLayout';
 import Profile from './components/views/Profile/Profile';
 import LoginPage from './components/views/Login/login'
 const client = new ApolloClient({

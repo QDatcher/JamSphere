@@ -17,7 +17,7 @@ const LoginPage = () => {
 
     return (
         <>
-            <section classname='loginInfo'>
+            <section className='login-section'>
                 <h2>Login</h2>
                 <form onSubmit={onLoginSubmit}>
                 <label>Email</label><br/>

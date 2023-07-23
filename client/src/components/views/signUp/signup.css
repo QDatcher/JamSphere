@@ -1,16 +1,32 @@
 body {
-  background-image: url("./components/images/jamsphere\ background.avif");
+  background-image: url("../../images/jamsphere\ background.avif");
   background-size: cover;
 }
 
-.signup-section {  
-  border-radius: 40px;
+.signup-section {
+  width: 400px;  
+  height: 500px;
+  border-radius: 70px;
   border: 2px solid aqua;
   padding: 20px;
-  margin-top: 110%;
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  text-align: center;
   background-color: rgba(0, 255, 255, 0.196);
   color: white;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.signup-section {
+  cursor: pointer; 
+  transition: 1s;
+  
+}
+
+.signup-section:hover {
+  background-color: rgba(0, 255, 255, 0.4);
+  
 }
 
 .App {

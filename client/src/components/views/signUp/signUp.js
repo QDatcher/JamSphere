@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import './signup.css';
 
 const SignUpPage = () => {
     const [userName, setUserName] = useState('')
@@ -7,7 +7,6 @@ const SignUpPage = () => {
     const [lastName, setLastName] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-
 
     const onSubmitHandler = (e) =>{
         e.preventdefault()
