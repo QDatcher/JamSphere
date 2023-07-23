@@ -1,69 +1,84 @@
 import React, { useState } from 'react';
-import './signup.css'
+import { useMutation } from '@apollo/client';
+import { SIGNUP_USER } from '../../../utils/mutations';
+import Auth from '../../../utils/auth';
+
 
 const SignUpPage = () => {
-    const [userName, setUserName] = useState('')
-    const [firstName, setFirstName] = useState('')
-    const [lastName, setLastName] = useState('')
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
+    const [userFormData, setUserFormData] = useState({
+      name: '',
+      username: '',
+      email: '',
+      password: '',
+    });
 
-
-    const onSubmitHandler = (e) =>{
-        e.preventdefault()
-        const formData = {firstName, lastName, email, userName, password};
-
-        console.log(formData)
-
-        setUserName('')
-        setFirstName('')
-        setLastName('')
-        setEmail('')
-        setPassword('')
-        
-    }
+    const [signupUser] = useMutation(SIGNUP_USER);
+  
+    const handleInputChange = (event) => {
+      const { name, value } = event.target;
+      setUserFormData({ ...userFormData, [name]: value });
+    };
+  
+    const handleFormSubmit = async (event) => {
+      event.preventDefault();
+  
+      try {
+        const { data } = await signupUser({
+          variables: { ...userFormData },
+        });
+  
+        Auth.login(data.signup.token);
+      } catch (err) {
+        console.error(err);
+      }
+  
+      setUserFormData({
+        name: '',
+        username: '',
+        email: '',
+        password: '',
+      });
+    };
+  
     return (
         <>
             <section className='signup-section'>
-                <h2>Sign Up</h2>
-                <form onSubmit={onSubmitHandler}>
-                    <label>First Name:</label><br/>
+                <h2>SignUp</h2>
+                <form onSubmit={handleFormSubmit}>
+                    <label>Name</label><br/>
                     <input 
                         type='text' 
-                        name="firstName"
-                        placeholder="First Name"
-                        onChange={event => setFirstName(event.target.value)}
+                        name="name"
+                        placeholder="Name"
+                        onChange={handleInputChange}
+                        value={userFormData.name}
                     />
                     <br/><br/>
-                    <label>Last Name:</label><br/>
-                    <input 
-                        type='text'
-                        name="lastName" 
-                        placeholder="Last Name"
-                        onChange={event => setLastName(event.target.value)} />
-                    <br/><br/>
-                    <label>Username:</label><br/>
+                    <label>UserName</label><br/>
                     <input 
                         type='text'
                         name="username" 
                         placeholder="Username"
-                        onChange={event => setUserName(event.target.value)} />
+                        onChange={handleInputChange}
+                        value={userFormData.username} />
                     <br/><br/>
-                    <label>Email:</label><br/>
+                    <label>Email</label><br/>
                     <input 
                         type='email'
                         name="email" 
                         placeholder="Email"
-                        onChange={event => setEmail(event.target.value)} />
+                        onChange={handleInputChange}
+                        value={userFormData.email} />
                     <br/><br/>
-                    <label>Password:</label><br/>
+                    <label>Password</label><br/>
                     <input 
                         type='password'
                         name="password" 
                         placeholder="Password"
-                        onChange={event => setPassword(event.target.value)} />
+                        onChange={handleInputChange}
+                        value={userFormData.password} />
                     <br/><br/>
-                    <button type="submit">Sign Me Up!</button>
+                    <button type="submit">Submit</button>
                 </form>                 
             </section>
         </>
