@@ -1,0 +1,15 @@
+li {
+    font-size: 1.2vw;
+
+}
+
+li button:hover {
+    color: #D1495B;
+    transform: scale(1.2);
+    text-shadow: none;
+}
+
+section {
+    background-color: #FCF7F8;
+    padding: 2vh 4vh 8vh;
+}
