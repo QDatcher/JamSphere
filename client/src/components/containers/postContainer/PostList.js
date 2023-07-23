@@ -1,4 +1,4 @@
-import Post from '../../builders/post/post'
+import Post from '../../builders/post/Post'
 
 
 const PostsList = ({posts}) => {

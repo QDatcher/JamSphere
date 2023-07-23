@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+const dateFormat = require('../utils/dateFormat');
 
 const postSchema = new Schema(
   {
@@ -24,6 +25,8 @@ const postSchema = new Schema(
     },
     lastEditedAt: {
       type: Date,
+      default: Date.now,
+      get: (timestamp) => dateFormat(timestamp),
     },
   },
   { timestamps: true }
