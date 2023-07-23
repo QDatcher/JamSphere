@@ -1,8 +1,11 @@
 import React from 'react';
 import PostList from '../../containers/postContainer';
 
-const Home = ({ }) => {
+const Home = () => {
+
+    const posts = [{},{},{}]
+
     return (
-        <PostList></PostList>
+        <PostList posts={posts} ></PostList>
     )
 }

@@ -1,10 +1,15 @@
 import React from 'react';
 import "./Nav.css";
 import Auth from '../../../utils/auth';
+import { useMutation } from '@apollo/client';
 
 const Nav = () => {
 
     const isLoggedIn = Auth.loggedIn();
+
+    const logout = () => {
+
+    }
 
     return (
         <>
@@ -15,9 +20,14 @@ const Nav = () => {
                     </li>
 
                     {isLoggedIn ? (
-                        <li>
-                            <a href="/profile" id="profile">Profile</a>
-                        </li>
+                        <>
+                            <li>
+                                <a href="/profile" id="profile">Profile</a>
+                            </li>
+                            <li>
+                                <button onClick={Auth.logout} id="logout">Logout</button>
+                            </li>
+                        </>
                     ) : (
                         <>
                             <li>
