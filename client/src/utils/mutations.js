@@ -25,3 +25,22 @@ export const SIGNUP_USER = gql`
     }
   }
 `;
+
+export const CREATE_POST = gql
+`mutation CreatePost($authorId: ID!, $title: String!, $songUrl: String!, $artist: String, $postText: String!) {
+  createPost(authorId: $authorId, title: $title, songURL: $songUrl, artist: $artist, postText: $postText) {
+    _id
+    artist
+    title
+    songURL
+    authorId {
+      _id
+    }
+    comments {
+      _id
+    }
+    lastEditedAt
+    postText
+  }
+}`;
+
