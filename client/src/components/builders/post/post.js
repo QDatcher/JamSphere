@@ -7,7 +7,7 @@ const Post = ({ artist, title, photo, username, songURL, comments }) => {
     const toggleComments = (e) => {
         e.preventDefault()
 
-        if(showComment){
+        if (showComment) {
             setShowComment(false)
         } else {
             setShowComment(true)
@@ -16,24 +16,23 @@ const Post = ({ artist, title, photo, username, songURL, comments }) => {
 
     return (
         <>
-            <div>
+            <div class="post-container">
                 <div id="postPhoto">
                     <img src={photo} alt="Cover for Song" ></img></div>
-                <h2 id="postUsername">{username}</h2>
-                <br></br>
-                <h3 id="postTitle">{title}</h3>
-                <h2 id="postArtist">{artist}</h2>
-                <iframe  src={songURL} title="Link To Song"/>
-            </div>
-            <div>
-                <button onClick={toggleComments}></button>
-            </div>
-            {/* This code below should mean that if showComment is true we display this following code */}
-            {showComment && (
+                <h2 id="postTitle">{title}</h2>
+                <h3 id="postArtist">{artist}</h3>
+                <iframe src={songURL} title="Link To Song"></iframe>
+                <h2 id="postUsername">Posted by @{username}</h2>
                 <div>
-                    <CommentsContainer comments={comments} />
+                    <button onClick={toggleComments}></button>
                 </div>
-            )}
+                {/* This code below should mean that if showComment is true we display this following code */}
+                {showComment && (
+                    <div>
+                        <CommentsContainer comments={comments} />
+                    </div>
+                )}
+            </div>
         </>
     )
 
