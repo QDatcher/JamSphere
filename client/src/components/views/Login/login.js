@@ -32,11 +32,7 @@ const LoginPage = () => {
     console.log("formData",formData)
 
 
-    const form = e.currentTarget;
-    if (form.checkValidity() === false) {
-        e.preventDefault();
-        e.stopPropagation();
-    }
+
 
     try{
         const { data } = await login({
