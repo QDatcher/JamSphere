@@ -1,4 +1,4 @@
-import Comment from '../../builders/comment/comment'
+import Comment from '../../builders/comment/Comment'
 
 
 const CommentsContainer = ({comments}) => {

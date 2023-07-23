@@ -11,8 +11,6 @@ const LoginPage = () => {
     console.log(email)
     console.log(password)
 
-
-
     const [login, { error }] = useMutation(LOGIN_USER)
     // const [formState, setFormState] = useState({ email: '', password: '' });
     // const [login, { error, data }] = useMutation(LOGIN_USER);
@@ -82,22 +80,23 @@ const LoginPage = () => {
 
     return (
         <>
-            <section classname='loginInfo'>
-                <h2>Login</h2>
+            <section classname='loginInfo' id="loginInfo">
+                <h2>Log In</h2>
                 <form onSubmit={onLoginSubmit}>
-                <label>Email</label><br/>
-                    <input 
-                        type='email' 
+                    <label>Email</label><br />
+                    <input
+                        type='email'
                         name="email"
                         placeholder="Email"
                         onChange={event => setEmail(event.target.value)}>
-                    </input><br/><br/>
-                    <label>Password</label><br/>
-                    <input 
+                    </input><br /><br />
+                    <label>Password</label><br />
+                    <input
                         type='password'
-                        name="password" 
+                        name="password"
                         placeholder="Password"
                         onChange={event => setPassword(event.target.value)}>
+
                     </input><br/><br/>
                     {/* <button
                         className='btn btn-block btn-info'
@@ -106,6 +105,7 @@ const LoginPage = () => {
                         >
                             Submit
                         </button> */}
+                    <button type="submit">Log In</button>
                 </form>
             </section>
         </>

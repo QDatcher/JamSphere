@@ -1,0 +1,35 @@
+nav {
+    margin: 0;
+    padding: 0;
+}
+
+
+ul {
+    list-style: none;
+    display: flex;
+}
+
+li {
+    padding: 10px;
+    font-size: 4.2vh;
+    font-weight: bold;
+    /* Add some padding for spacing */
+}
+
+#home:hover {
+    color: #EDAE49;
+    transform: scale(1.2);
+    text-shadow: none;
+}
+
+#signup:hover {
+    color: #00798C;
+    transform: scale(1.2);
+    text-shadow: none;
+}
+
+#login:hover {
+    color: #D1495B;
+    transform: scale(1.2);
+    text-shadow: none;
+}

@@ -1,11 +1,11 @@
 
-import Header from '../containers/header/header'
+import Header from '../containers/header/Header'
 
 const PageLayout = ({ children }) => {
 
     return (
         <>
-            <div>
+            <div id="Header">
                 <Header />
             </div>
 
