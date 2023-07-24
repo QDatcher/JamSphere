@@ -7,16 +7,13 @@ const Nav = () => {
 
     const isLoggedIn = Auth.loggedIn();
 
-    const logout = () => {
-
-    }
 
     return (
         <>
             <nav>
                 <ul>
                     <li>
-                        <a href="/home" id="home">Home</a>
+                        <a href="/" id="home">Home</a>
                     </li>
 
                     {isLoggedIn ? (
