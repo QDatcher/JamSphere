@@ -1,5 +1,5 @@
 
-import PostList from '../../containers/postContainer/PostList';
+import PostList from '../../containers/PostList/PostList';
 import { useState, useEffect } from 'react'
 import { useQuery } from '@apollo/client'
 
