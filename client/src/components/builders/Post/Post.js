@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import CommentsContainer from '../../containers/CommentsContainer/CommentsContainer';
+import CommentsContainer from '../../containers/commentsContainer/CommentsContainer';
 
 const Post = ({ artist, title, photo, username, songURL, comments }) => {
     const [showComment, setShowComment] = useState(false);

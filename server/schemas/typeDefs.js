@@ -37,7 +37,6 @@ type AuthData {
 }
 
 type Query {
-  _: Boolean
   getUser(userId: ID!): User
   getPost(postId: ID!): Post
   userPosts(userId: ID!): [Post]
@@ -46,7 +45,6 @@ type Query {
 }
 
 type Mutation {
-  uploadPhoto(photo: String): String
   createPost(authorId: ID!, artist: String, title: String!, songURL: String!, postText: String!): Post!
   createComment(authorId: ID!, postId: ID!, authorName: String!, commentContent: String!): Comment!
   login(email: String!, password: String!): AuthData!
