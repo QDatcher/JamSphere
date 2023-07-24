@@ -3,14 +3,17 @@ import { useQuery } from '@apollo/client';
 import ProfileWindow from '../../containers/profileWindow/ProfileWindow';
 import './profile.css';
 import { YOUR_PROFILE } from '../../../utils/queries';
+import jwt_decode from 'jwt-decode';
 
 const Profile = () => {
     const [userId, setUserId] = useState(null);
 
     useEffect(() => {
-        const storedUserId = localStorage.getItem('id_token');
-        if (storedUserId) {
-            setUserId(storedUserId);
+        const token = localStorage.getItem('id_token');
+        console.log(token);
+        if (token) {
+            const decodedToken = jwt_decode(token);
+            setUserId(decodedToken.data._id);
         }
     }, []);
 
