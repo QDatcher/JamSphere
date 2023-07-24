@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import "./post.css"
+import { Link } from 'react-router-dom';
 import CommentsContainer from '../../containers/CommentsContainer/CommentsContainer';
 
-const Post = ({ artist, title, postText, username, songURL, comments }) => {
+const Post = ({ artist, title, postText, username, songURL, comments, authorId }) => {
     const [showComment, setShowComment] = useState(false);
 
     const toggleComments = (e) => {
@@ -22,6 +23,7 @@ const Post = ({ artist, title, postText, username, songURL, comments }) => {
                     <h2 id="postTitle">{title}</h2>
                     <h3 id="postArtist">{artist}</h3>
                     <h3 id="postText">{postText}</h3>
+                    <Link to={`/profile/${authorId}`}>{username}</Link>
                     <a href={songURL} title="Link To Song">♩♬♪ Listen Here♩♬♪</a>
                     <h3 id="postUsername">Posted by @{username}</h3>
 
@@ -41,14 +43,5 @@ const Post = ({ artist, title, postText, username, songURL, comments }) => {
     )
 
 }
-
-// Post.propTypes = {
-//     artist: PropTypes.string.isRequired,
-//     title: PropTypes.string.isRequired,
-//     photo: PropTypes.string.isRequired,
-//     username: PropTypes.string.isRequired,
-//     songURL: PropTypes.string.isRequired,
-// };
-
 
 export default Post;

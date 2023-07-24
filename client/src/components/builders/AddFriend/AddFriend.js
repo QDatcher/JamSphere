@@ -1,6 +1,6 @@
 import React from 'react';
 import { useMutation } from '@apollo/client';
-import { ADD_FRIEND } from '../../graphql/mutations';
+import { ADD_FRIEND } from '../../../utils/mutations';
 
 const AddFriendButton = ({ currentUserId, friendId }) => {
     const [addFriend, { loading, error }] = useMutation(ADD_FRIEND);

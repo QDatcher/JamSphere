@@ -45,7 +45,7 @@ export const CREATE_POST = gql
 }`;
 
 
-export const ADD_FRIEND_MUTATION = gql`
+export const ADD_FRIEND = gql`
   mutation AddFriend($userId: ID!, $friendId: ID!) {
     updateUser(
       userId: $userId
