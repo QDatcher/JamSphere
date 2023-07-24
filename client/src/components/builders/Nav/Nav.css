@@ -15,7 +15,17 @@ li {
     font-weight: bold;
     /* Add some padding for spacing */
 }
-
+@media (max-width: 768px) {
+    /* Styles for screen width up to 768px (e.g., mobile devices) */
+    ul {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    li {
+      padding: 10px 0;
+    }
+  }
 li #home:hover {
     color: #EDAE49;
     transform: scale(1.2);

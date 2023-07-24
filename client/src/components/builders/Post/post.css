@@ -9,11 +9,12 @@
     color: #003D5B;
     padding: 1rem;
 }
-.post-content{
+
+.post-content {
     background-color: white;
     border-radius: 4px;
     padding: 2rem;
-    flex:1;
+    flex: 1;
 
 }
 
@@ -60,23 +61,25 @@
 .post-container button:hover {
     background-color: #00798C;
 }
+
 .post-content button {
-    margin-right: 10px; 
-    padding: 5px 10px; 
-  }
+    margin-right: 10px;
+    padding: 5px 10px;
+}
 
-  .post-content form {
-    margin-top: 10px; 
-  }
-  
-  .post-content textarea {
-    width: 100%; 
-    height: 100px; 
-    resize: vertical; 
-    margin-bottom: 10px; 
+.post-content form {
+    margin-top: 10px;
+}
 
-  }
-  .post-content button[type="submit"] {
+.post-content textarea {
+    width: 100%;
+    height: 100px;
+    resize: vertical;
+    margin-bottom: 10px;
+
+}
+
+.post-content button[type="submit"] {
     background-color: #EDAE49;
     color: white;
     border: none;
@@ -84,9 +87,37 @@
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-  }
-  
-  .post-content button[type="submit"]:hover {
+}
+
+.post-content button[type="submit"]:hover {
     background-color: #005A6B;
-  }
-  
+}
+
+@media (max-width: 768px) {
+    .post-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .post-container h2 {
+        font-size: 2.5em;
+    }
+
+    .post-container h3 {
+        font-size: 1.5em;
+    }
+
+    .post-container a {
+        height: auto;
+    }
+
+    .post-content {
+        padding: 1rem;
+    }
+
+    .post-content button,
+    .post-content form {
+        width: 100%;
+        max-width: 250px;
+    }
+}
