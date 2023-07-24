@@ -10,7 +10,6 @@ const Profile = () => {
 
     useEffect(() => {
         const token = localStorage.getItem('id_token');
-        console.log(token);
         if (token) {
             const decodedToken = jwt_decode(token);
             setUserId(decodedToken.data._id);
