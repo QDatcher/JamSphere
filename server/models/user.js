@@ -27,10 +27,10 @@ const userSchema = new Schema(
     coverPicId: {
       type: String
     },
-    friendList: {
-      type: [Schema.Types.ObjectId],
+    friendList: [{
+      type: Schema.Types.ObjectId,
       ref: 'User'
-    },
+    }],
   },
 );
 

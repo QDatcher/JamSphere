@@ -31,16 +31,17 @@ const resolvers = {
   Mutation: {
     signup: async (
       parent,
-      { name, username, email, password }
+      { name, username, email, password, coverPicId }
     ) => {
       const profile = await User.create({
         name,
         username,
         email,
         password,
+        coverPicId,
       });
       const token = signToken(profile);
-
+    
       return { token, profile };
     },
 

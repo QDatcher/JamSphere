@@ -17,22 +17,23 @@ query GetPost($postId: ID!) {
       }
     }
   }
-`
+`;
 
 export const YOUR_PROFILE = gql`
-query GetUser($userId: ID!) {
+  query GetUser($userId: ID!) {
     getUser(userId: $userId) {
       _id
-      coverPicId
       name
       username
       email
+      coverPicId
       friendList {
         _id
       }
     }
   }
 `;
+
 
 export const User_Profile = gql`
 query GetUser($userId: ID!) {
