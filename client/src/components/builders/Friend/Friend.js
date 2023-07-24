@@ -1,19 +1,17 @@
 import React from 'react';
 import './friend.css';
 
-const Friend = ({ profileURL, username }) => {
+const Friend = ({ coverPicId, username }) => {
     return (
-        <>    
-            <a href="*">
-                <div>
-                    <div>
-                        <img alt={`${username} profile pic`} src={profileURL}></img>
-                    </div>
-                    <p>{username}</p>
-                </div>
-            </a>
-        </>
-    )
+        <div className="friend-container">  
+            <div className="friend-cover">
+                <img alt={`${username}'s profile`} src={coverPicId}></img>
+            </div>
+            <div className="friend-username">
+                <p>{username}</p>
+            </div>
+        </div>
+    );
 }
 
 export default Friend;

@@ -53,6 +53,7 @@ type Mutation {
   signup(name: String!, username: String!, email: String!, password: String!): AuthData!
   deletePost(postId: ID!): Post
   deleteUser(userId: ID!): User
+  addFriend(userId: ID!, friendId: ID!): User
 }
 `;
 
