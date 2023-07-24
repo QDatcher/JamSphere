@@ -48,7 +48,7 @@ type Mutation {
   createPost(authorId: ID!, artist: String!, title: String!, songURL: String!, postText: String!): Post!
   createComment(authorId: ID!, postId: ID!, commentContent: String!): Comment!
   login(email: String!, password: String!): AuthData!
-  signup(name: String!, username: String!, email: String!, password: String!): AuthData!
+  signup(name: String!, username: String!, email: String!, password: String!, coverPicId: String): AuthData!
   deletePost(postId: ID!): Post
   deleteUser(userId: ID!): User
   addFriend(userId: ID!, friendId: ID!): User

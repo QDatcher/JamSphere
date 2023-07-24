@@ -26,8 +26,10 @@ const SignUpPage = () => {
 
     const handleFormSubmit = async (event) => {
         event.preventDefault();
+        console.log("Submitting form with data:", userFormData);
 
         try {
+            console.log(userFormData);
             const { data } = await signupUser({
                 variables: { ...userFormData },
             });
@@ -48,6 +50,7 @@ const SignUpPage = () => {
 
     const selectProfile = (src) => {
         setUserFormData({ ...userFormData, coverPicId: src });
+        console.log("Selected profile:", src);
     };
     return (
         <>
@@ -87,11 +90,9 @@ const SignUpPage = () => {
                         onChange={handleInputChange}
                         value={userFormData.password} />
                     <label>Choose Your Profile Picture</label>
-                    <img src={Profile1} onClick={() => selectProfile('Profile1.png')} className="profile-img" alt="Profile 1" />
-                    <img src={Profile2} onClick={() => selectProfile('Profile2.png')} className="profile-img" alt="Profile 2" />
-                    <img src={Profile3} onClick={() => selectProfile('Profile3.png')} className="profile-img" alt="Profile 3" />
-
-
+                    <img src={Profile1}onClick={() => selectProfile('Profile1.png')}className={`profile-img ${userFormData.coverPicId === 'Profile1.png' ? 'selected' : ''}`}alt="Profile 1"/>
+                    <img src={Profile2}onClick={() => selectProfile('Profile2.png')}className={`profile-img ${userFormData.coverPicId === 'Profile2.png' ? 'selected' : ''}`}alt="Profile 2"/>
+                    <img src={Profile3}onClick={() => selectProfile('Profile3.png')}className={`profile-img ${userFormData.coverPicId === 'Profile3.png' ? 'selected' : ''}`}alt="Profile 3"/>                    
                     <br /><br />
                     <button type="submit">Submit</button>
                 </form>

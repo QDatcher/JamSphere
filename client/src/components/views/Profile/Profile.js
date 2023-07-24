@@ -4,6 +4,9 @@ import ProfileWindow from '../../containers/ProfileWindow/ProfileWindow';
 import './profile.css';
 import { YOUR_PROFILE } from '../../../utils/queries';
 import jwt_decode from 'jwt-decode';
+import Profile1 from '../../../images/Profile1.png';
+import Profile2 from '../../../images/Profile2.png';
+import Profile3 from '../../../images/Profile3.png';
 
 const Profile = () => {
     const [userId, setUserId] = useState(null);
@@ -24,20 +27,30 @@ const Profile = () => {
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error: {error.message}</p>;
 
+    const profileImages = {
+        'Profile1.png': Profile1,
+        'Profile2.png': Profile2,
+        'Profile3.png': Profile3,
+    };
+
     const { username, name, coverPicId } = data?.getUser || {};
 
     return (
         <>
             <div className="profile-container">
                 <div className="profile-info">
-                    <h2 id="username"><em>@</em>{username}</h2>
-                    <h2>{name}</h2>
+                    <div>
+                        <h2>@{username}</h2>
+                        <h2>{name}</h2>
+                        <div>
+                        <img src={coverPicId ? profileImages[coverPicId] : ''} alt="Profile Picture"></img>
+                        </div>
+                    </div>
                     <ProfileWindow></ProfileWindow>
                 </div>
-                <img src={coverPicId} alt="Profile Picture"></img>
             </div>
         </>
-    )
-}
+    );
+};
 
 export default Profile;
