@@ -3,6 +3,9 @@ import { useMutation } from '@apollo/client';
 import { SIGNUP_USER } from '../../../utils/mutations';
 import Auth from '../../../utils/auth';
 import './signup.css';
+import Profile1 from '../../../images/Profile1.png';
+import Profile2 from '../../../images/Profile2.png';
+import Profile3 from '../../../images/Profile3.png';
 
 
 const SignUpPage = () => {
@@ -84,9 +87,10 @@ const SignUpPage = () => {
                         onChange={handleInputChange}
                         value={userFormData.password} />
                     <label>Choose Your Profile Picture</label>
-                    <img src="../../images/Profile1.png" onClick={() => selectProfile('Profile1.png')} className="profile-img" alt="Profile 1" />
-                    <img src="../../images/Profile2.png" onClick={() => selectProfile('Profile2.png')} className="profile-img" alt="Profile 2" />
-                    <img src="../../images/Profile3.png" onClick={() => selectProfile('Profile3.png')} className="profile-img" alt="Profile 3" />
+                    <img src={Profile1} onClick={() => selectProfile('Profile1.png')} className="profile-img" alt="Profile 1" />
+                    <img src={Profile2} onClick={() => selectProfile('Profile2.png')} className="profile-img" alt="Profile 2" />
+                    <img src={Profile3} onClick={() => selectProfile('Profile3.png')} className="profile-img" alt="Profile 3" />
+
 
                     <br /><br />
                     <button type="submit">Submit</button>
