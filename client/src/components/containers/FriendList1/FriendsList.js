@@ -1,4 +1,4 @@
-import Friend from "../../builders/Friend/Friend";
+import Friend from "../../builders/Friend/friend1";
 
 
 const FriendList = ({friends}) => {
