@@ -87,7 +87,7 @@ const Home = () => {
                 {isLoggedIn ? (
                     <>
                         <button id="create" onClick={toggleCreateForm}>
-                            +
+                        {showCreateForm ? '-' : '+'}
                         </button>
                         {showCreateForm && isLoggedIn && (
                             <div className="create-form">
