@@ -9,10 +9,10 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 
-import SignUpPage from './components/views/SignUp/SignUp';
+import SignUpPage from './components/views/signUp1/signUp1';
 import Profile from './components/views/Profile/Profile';
-import LoginPage from './components/views/Login/Login';
-import PageLayout from './components/Layout/PageLayout';
+import LoginPage from './components/views/Login/logi1n';
+import PageLayout from './components/layout1/pageLayou1t';
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
