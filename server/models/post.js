@@ -9,9 +9,6 @@ const postSchema = new Schema(
       ref: "User",
       required: true,
     },
-    // photo: {
-    //   type: String,
-    // },
     artist: {
       type: String,
     },

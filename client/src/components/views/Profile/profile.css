@@ -25,7 +25,19 @@
 }
 
 /* Apply styles to the h2 elements within the profile info section */
+
+
 .profile-info h2 {
-    font-size: 2vw;
-    margin-bottom: 2vh;
+    font-size: 2.5em;
+    margin-bottom: 1vh;
+    margin-left: 1.2vw;
+}
+#username{
+    font-size: 4em;
+}
+em{
+    font-weight: bolder;
+    background: linear-gradient(to right, #D1495B, #00798C, #003D5B);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }

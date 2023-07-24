@@ -1,8 +1,7 @@
-require("dotenv").config();
-const cloudinary = require("cloudinary");
 const { AuthenticationError } = require("apollo-server-express");
 const { User, Post, Comment } = require("../models");
 const { signToken } = require("../utils/auth");
+const { text } = require("express");
 
 const resolvers = {
   Query: {
@@ -76,9 +75,10 @@ const resolvers = {
   
       throw new AuthenticationError('You need to be logged in!');
     },
-
+                    // parameters
     createPost: async (parent, { artist, title, songURL, postText }, context) => {
       if (context.user) {
+        //variables
           const newPost = await Post.create({
               authorId: context.user._id,
               artist: artist,
@@ -96,35 +96,35 @@ const resolvers = {
       }
   
       throw new AuthenticationError('You need to be logged in!');
-  },
-
-    uploadPhoto: async ( _, { photo } ) => {
-      //initialize cloudinary
-      cloudinary.config({
-        cloud_name: process.env.CLOUDINARY_NAME,
-        api_key: process.env.CLOUDINARY_API_KEY,
-        api_secret: process.env.CLOUDINARY_API_SECRET,
-      });
-      
-      //try-catch block for handling actual image upload
-      try {
-        const result = await cloudinary.v2.uploader.upload(photo, {
-          //Only jpg and png files can be uploaded
-          allowed_formats: ["jpg", "png"],
-          //generates a new id for each uploaded image
-          public_id: "",
-          //creates a folder called "JamSphere" where images will be stored.
-          folder: "JamSphere",
-        });
-      } catch (e) {
-        //returns an error message on image upload failure.
-        return `Image could not be uploaded:${e.message}`;
-      }
-      /*returns uploaded photo url if successful `result.url`.
-      if we were going to store image name in database,this
-      */
-      return `Successful-Photo URL: ${result.url}`;
     },
+    
+    // createComment: async (parent, { postId, commentContent }, context) => {
+    //   if (context.user) {
+    //     const newComment = await Comment.create({
+    //       authorId: context.user._id,
+    //       postId: context.posts._id,
+    //       commentContent: commentContent,
+    //   });
+    //     return Post.findOneAndUpdate(
+    //       { _id: postId },
+    //       {
+    //         $addToSet: {
+    //           comments: { 
+    //             comment: newComment._id,
+    //             commentContent, 
+    //             commentAuthor: context.user.username 
+    //           },
+    //         },
+    //       },
+    //       {
+    //         new: true,
+    //         runValidators: true,
+    //       }
+    //     );
+    //   }
+    //   throw new AuthenticationError('You need to be logged in!');
+    // },
+
     deletePost: async (parent, { postId }) => {
       // Implement the logic to delete a post by postId
       const deletedPost = await Post.findByIdAndDelete(postId);
