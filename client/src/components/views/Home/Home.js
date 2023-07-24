@@ -12,8 +12,7 @@ const Home = () => {
 
     return (
         <>
-
-            <div>helloooooooooooooooooooooooooooo</div>
+            <button id="create">+</button>
             <PostList posts={posts} ></PostList>
         </>
 
