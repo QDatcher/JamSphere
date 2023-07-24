@@ -16,15 +16,15 @@ li {
     /* Add some padding for spacing */
 }
 
-#home:hover {
+li #home:hover {
     color: #EDAE49;
     transform: scale(1.2);
     text-shadow: none;
 }
 
-#signup:hover {
+li #signup:hover {
     color: #00798C;
-    transform: scale(1.2);
+    transform: scale(1.8);
     text-shadow: none;
 }
 
@@ -36,6 +36,11 @@ li {
 
 #profile:hover {
     color: #00798C;
+    transform: scale(1.2);
+    text-shadow: none;
+}
+#logout:hover {
+    color: #D1495B;
     transform: scale(1.2);
     text-shadow: none;
 }

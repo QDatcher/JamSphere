@@ -30,6 +30,8 @@ button#create:hover {
     border-radius: 8px;
     padding: 1rem;
     margin-top: 1rem;
+    margin-left:2.1rem;
+    max-width: 90vw;
 }
 
 .create-form input,
