@@ -24,20 +24,14 @@ const userSchema = new Schema(
       required: true,
       minlength: 4,
     },
-    // coverPicId: {
-    //   type: String
-    // },
+    coverPicId: {
+      type: String
+    },
     friendList: {
       type: [Schema.Types.ObjectId],
       ref: 'User'
     },
   },
-  // //code to make the virtuals work
-  // {
-  //   toJSON: {
-  //     virtuals: true,
-  //   },
-  // }
 );
 
 //encrypting password
