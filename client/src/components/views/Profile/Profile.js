@@ -33,7 +33,7 @@ const Profile = () => {
                     <h2>{name}</h2>
                     <ProfileWindow></ProfileWindow>
                 </div>
-                <img src={coverPicId} alt="Profile Picture"></img>
+                <img src={coverPicId} alt="Profile Pic"></img>
             </div>
         </>
     )
