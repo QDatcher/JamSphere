@@ -1,12 +1,17 @@
 import React, { useState } from 'react';
-import './post.css';
+
+import "./post.css"
+import { Link } from 'react-router-dom';
+
 import CommentsContainer from '../../containers/CommentsContainer/CommentsContainer';
 import Auth from '../../../utils/auth';
+
 
 const Post = ({ artist, title, postText, username, songURL, comments }) => {
   const isLoggedIn = Auth.loggedIn();
   const [showComment, setShowComment] = useState(false);
   const [showCommentForm, setShowCommentForm] = useState(false); // New state for comment form visibility
+
 
   const toggleComments = (e) => {
     e.preventDefault();
@@ -17,6 +22,7 @@ const Post = ({ artist, title, postText, username, songURL, comments }) => {
       setShowComment(true);
     }
   };
+
 
   const toggleCommentForm = (e) => {
     e.preventDefault();
@@ -65,3 +71,4 @@ const Post = ({ artist, title, postText, username, songURL, comments }) => {
 };
 
 export default Post;
+

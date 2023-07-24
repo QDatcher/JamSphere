@@ -32,5 +32,19 @@ query GetUser($userId: ID!) {
       }
     }
   }
-`
+`;
 
+export const User_Profile = gql`
+query GetUser($userId: ID!) {
+    getUser(userId: $userId) {
+      _id
+      coverPicId
+      name
+      username
+      email
+      friendList {
+        _id
+      }
+    }
+  }
+`;

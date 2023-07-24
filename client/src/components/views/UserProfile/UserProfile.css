@@ -1,0 +1,31 @@
+/* Apply styles to the entire profile container */
+.profile-container {
+    max-width: 90vw;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+
+}
+
+/* Apply styles to the profile picture */
+.profile-container img {
+    width: 30%;
+    border-radius: 50%;
+    margin-right: 3vw;
+}
+
+/* Apply styles to the profile information section */
+.profile-info {
+    flex: 1;
+    background-color: #EDAE49;
+    border-radius: 8px;
+    color: #003D5B;
+    padding: 5vw;
+    font-size: 1.2vw;
+}
+
+/* Apply styles to the h2 elements within the profile info section */
+.profile-info h2 {
+    font-size: 2vw;
+    margin-bottom: 2vh;
+}
