@@ -1,6 +1,6 @@
 .post-container {
     max-width: 90vw;
-    margin: 0 auto;
+    margin-bottom: 1em;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -18,19 +18,27 @@
 }
 
 .post-container h2 {
-    font-size: 1.5vw;
+    font-size: 3em;
     margin-bottom: 1vh;
 }
 
 .post-container h3 {
-    font-size: 1.2vw;
+    font-size: 1.8em;
     margin-bottom: .5vh;
 }
 
-.post-container iframe {
+
+.post-container a {
     width: 100%;
     height: 50vh;
     margin-bottom: 2vh;
+}
+
+.post-container a:hover {
+    width: 100%;
+    height: 50vh;
+    margin-bottom: 2vh;
+    text-decoration: underline #003D5B;
 }
 
 .post-container h2#postUsername {

@@ -10,7 +10,12 @@ import "./Home.css";
 
 const Home = () => {
     const isLoggedIn = Auth.loggedIn();
-    const posts = [{}, {}, {}]
+    const posts = [{
+        artist: 'Beyonce',
+        title: 'Ring on it',
+        postText: 'I love this song so much it is so my jam',
+        songURL: ''
+    }, {}, {}]
 
     const [showCreateForm, setShowCreateForm] = useState(false);
     const [formData, setFormData] = useState({
