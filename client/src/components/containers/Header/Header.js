@@ -8,7 +8,7 @@ const Header = () => {
     return (
         <>
             <header>
-                <h1>JamSphere</h1>
+                <h1>JamSphere♫</h1>
                 <Nav />
             </header>
             
