@@ -1,7 +1,7 @@
 
 import Header from '../containers/Header/Header'
 
-const PageLayout = ({ children }) => {
+const PageLayout = () => {
 
     return (
         <>
@@ -9,7 +9,6 @@ const PageLayout = ({ children }) => {
                 <Header />
             </div>
 
-            {children}
         </>
     )
 }
