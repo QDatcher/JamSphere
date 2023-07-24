@@ -61,3 +61,25 @@ body{
 .create-form button:hover {
     background-color: #d1495b;
 }
+@media (max-width: 768px) {
+    button#create {
+        font-size: 3vw;
+        padding: 3vh 4vw;
+    }
+
+    .create-form {
+        margin-left: 1rem;
+    }
+
+    .create-form input,
+    .create-form textarea {
+        font-size: 3vw;
+        padding: 1vh;
+        margin-bottom: 2vh;
+    }
+
+    .create-form button {
+        font-size: 2vw;
+        padding: 1.2rem 2rem;
+    }
+}

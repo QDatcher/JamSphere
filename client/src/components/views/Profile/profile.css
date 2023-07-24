@@ -4,15 +4,20 @@
     margin: 0 auto;
     display: flex;
     align-items: center;
-
+    position: relative; /* Create a relative positioning context for the container */
 }
 
 /* Apply styles to the profile picture */
 .profile-container img {
     width: 30%;
     border-radius: 50%;
+    position: absolute;
+    top: 12em;
+    right: 0;
     margin-right: 3vw;
+    margin-top: -15px; /* Adjust this value as needed to fine-tune the positioning */
 }
+
 
 /* Apply styles to the profile information section */
 .profile-info {

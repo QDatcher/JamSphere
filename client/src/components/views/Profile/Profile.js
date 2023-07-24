@@ -31,9 +31,10 @@ const Profile = () => {
                 <div className="profile-info">
                     <h2 id="username"><em>@</em>{username}</h2>
                     <h2>{name}</h2>
+                    <img src={coverPicId} alt="Profile Pic"></img>
                     <ProfileWindow></ProfileWindow>
                 </div>
-                <img src={coverPicId} alt="Profile Pic"></img>
+  
             </div>
         </>
     )
