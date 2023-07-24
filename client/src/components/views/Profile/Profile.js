@@ -10,7 +10,6 @@ const Profile = () => {
 
     useEffect(() => {
         const token = localStorage.getItem('id_token');
-        console.log(token);
         if (token) {
             const decodedToken = jwt_decode(token);
             setUserId(decodedToken.data._id);
@@ -34,7 +33,7 @@ const Profile = () => {
                     <h2>{name}</h2>
                     <ProfileWindow></ProfileWindow>
                 </div>
-                <img src={coverPicId} alt="Profile Picture"></img>
+                <img src={coverPicId} alt="Profile Pic"></img>
             </div>
         </>
     )
