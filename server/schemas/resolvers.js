@@ -61,6 +61,21 @@ const resolvers = {
       const token = signToken(profile);
       return { token, profile };
     },
+    
+    addFriend: async (parent, { userId, friendId }, context) => {
+      if (context.user && context.user._id === userId) {
+        const user = await User.findOne({ _id: userId });
+  
+        if (!user.friendList.includes(friendId)) {
+          user.friendList.push(friendId);
+          await user.save();
+        }
+  
+        return user;
+      }
+  
+      throw new AuthenticationError('You need to be logged in!');
+    },
 
     createPost: async (parent, { artist, title, songURL, postText }, context) => {
       if (context.user) {
