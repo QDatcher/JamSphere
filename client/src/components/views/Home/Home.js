@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useMutation, gql } from '@apollo/client';
 import PostList from '../../containers/PostList/PostList';
-import  Auth  from '../../../utils/auth';
+import Auth from '../../../utils/auth';
 import './Home.css';
 
 // Import the CREATE_POST mutation from your file (assuming it's in a 'mutations.js' file)
@@ -11,16 +11,29 @@ const Home = () => {
     const isLoggedIn = Auth.loggedIn();
     const posts = [
         {
+            _id: 1,
             artist: 'Beyonce',
             title: 'Ring on it',
             postText: 'I love this song so much it is so my jam',
             songURL: '',
         },
-        {}, // Placeholder for post 2 (modify it with actual data)
-        {}, // Placeholder for post 3 (modify it with actual data)
+        {
+            _id: 2,
+            artist: 'Beyonce',
+            title: 'Ring on it',
+            postText: 'I love this song so much it is so my jam',
+            songURL: '',
+        }, // Placeholder for post 2 (modify it with actual data)
+        {
+            _id: 3,
+            artist: 'Beyonce',
+            title: 'Ring on it',
+            postText: 'I love this song so much it is so my jam',
+            songURL: '',
+        }, // Placeholder for post 3 (modify it with actual data)
     ];
 
-    const [showCreateForm, setShowCreateForm] = useState(false);
+    const [showCreateForm, setShowCreateForm] = useState(true);
     const [formData, setFormData] = useState({
         artist: '',
         title: '',
@@ -76,6 +89,40 @@ const Home = () => {
                         <button id="create" onClick={toggleCreateForm}>
                             +
                         </button>
+                        {showCreateForm && isLoggedIn && (
+                            <div className="create-form">
+                                <form onSubmit={handleSubmit}>
+                                    <input
+                                        type="text"
+                                        name="artist"
+                                        placeholder="Artist"
+                                        value={formData.artist}
+                                        onChange={handleInputChange}
+                                    />
+                                    <input
+                                        type="text"
+                                        name="title"
+                                        placeholder="Title"
+                                        value={formData.title}
+                                        onChange={handleInputChange}
+                                    />
+                                    <textarea
+                                        name="postText"
+                                        placeholder="Leave a thought..."
+                                        value={formData.postText}
+                                        onChange={handleInputChange}
+                                    />
+                                    <input
+                                        type="text"
+                                        name="songURL"
+                                        placeholder="Song URL"
+                                        value={formData.songURL}
+                                        onChange={handleInputChange}
+                                    />
+                                    <button type="submit">Submit</button>
+                                </form>
+                            </div>
+                        )}
                         <PostList posts={posts} />
                     </>
                 ) : (
@@ -83,41 +130,6 @@ const Home = () => {
                 )}
             </div>
 
-            {/* Dropdown post Form */}
-            {showCreateForm && isLoggedIn && (
-                <div className="create-form">
-                    <form onSubmit={handleSubmit}>
-                        <input
-                            type="text"
-                            name="artist"
-                            placeholder="Artist"
-                            value={formData.artist}
-                            onChange={handleInputChange}
-                        />
-                        <input
-                            type="text"
-                            name="title"
-                            placeholder="Title"
-                            value={formData.title}
-                            onChange={handleInputChange}
-                        />
-                        <textarea
-                            name="postText"
-                            placeholder="Leave a thought..."
-                            value={formData.postText}
-                            onChange={handleInputChange}
-                        />
-                        <input
-                            type="text"
-                            name="songURL"
-                            placeholder="Song URL"
-                            value={formData.songURL}
-                            onChange={handleInputChange}
-                        />
-                        <button type="submit">Submit</button>
-                    </form>
-                </div>
-            )}
         </>
     );
 };

@@ -17,8 +17,8 @@ const Post = ({ artist, title, postText, username, songURL, comments }) => {
 
     return (
         <>
-            <div class="post-container">
-                <div class="post-content">
+            <div className="post-container">
+                <div className="post-content">
                     <h2 id="postTitle">{title}</h2>
                     <h3 id="postArtist">{artist}</h3>
                     <h3 id="postText">{postText}</h3>
