@@ -7,7 +7,7 @@ button#create {
     font-size: 1.5vw;
     border-radius: 4px;
     cursor: pointer;
-    margin-left: 3vw;
+    margin-left: 5vw;
     transition: background-color 0.3s ease;
 }
 
