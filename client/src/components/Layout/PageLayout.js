@@ -1,5 +1,5 @@
 
-import Header from '../containers/Header1/Header1'
+import Header from '../containers/Header/Header'
 
 const PageLayout = () => {
 

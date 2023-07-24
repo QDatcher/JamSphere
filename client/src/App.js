@@ -9,10 +9,10 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 
-import SignUpPage from './components/views/SignUp1/SignUp1';
+import SignUpPage from './components/views/SignUp/SignUp';
 import Profile from './components/views/Profile/Profile';
-import LoginPage from './components/views/Login/1Login';
-import PageLayout from './components/Layout1/1PageLayout';
+import LoginPage from './components/views/Login/Login';
+import PageLayout from './components/Layout/PageLayout';
 import Home from './components/views/Home/Home'
 
 // Construct our main GraphQL API endpoint

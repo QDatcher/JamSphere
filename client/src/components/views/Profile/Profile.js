@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useQuery } from '@apollo/client';
-import ProfileWindow from '../../containers/ProfileWindow1/ProfileWindow';
+import ProfileWindow from '../../containers/ProfileWindow/ProfileWindow';
 import './profile.css';
 import { YOUR_PROFILE } from '../../../utils/queries';
 import jwt_decode from 'jwt-decode';
