@@ -1,0 +1,59 @@
+button#create {
+    background-color: #EDAE49;
+    font-weight: bold;
+    color: white;
+    border: none;
+    padding: 2vh 3vw;
+    font-size: 1.5vw;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 5vw;
+    transition: background-color 0.3s ease;
+}
+
+button#create:hover {
+    background-color: #D1495B;
+}
+
+
+
+/* Assuming the container holding the posts has a class named "posts-container" */
+.posts-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.create-form {
+    background-color: #30638e;
+    color: #003d5b;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+.create-form input,
+.create-form textarea {
+    display: block;
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #003d5b;
+    border-radius: 4px;
+}
+
+.create-form button {
+    background-color: #edae49;
+    font-weight: bold;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.create-form button:hover {
+    background-color: #d1495b;
+}

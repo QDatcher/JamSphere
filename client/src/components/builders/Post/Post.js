@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+import "./post.css"
 import CommentsContainer from '../../containers/CommentsContainer/CommentsContainer';
 
-const Post = ({ artist, title, photo, username, songURL, comments }) => {
+const Post = ({ artist, title, postText, username, songURL, comments }) => {
     const [showComment, setShowComment] = useState(false);
 
     const toggleComments = (e) => {
@@ -17,15 +18,17 @@ const Post = ({ artist, title, photo, username, songURL, comments }) => {
     return (
         <>
             <div class="post-container">
-                <div id="postPhoto">
-                    <img src={photo} alt="Cover for Song" ></img></div>
-                <h2 id="postTitle">{title}</h2>
-                <h3 id="postArtist">{artist}</h3>
-                <iframe src={songURL} title="Link To Song"></iframe>
-                <h2 id="postUsername">Posted by @{username}</h2>
-                <div>
-                    <button onClick={toggleComments}></button>
+                <div class="post-content">
+                    <h2 id="postTitle">{title}</h2>
+                    <h3 id="postArtist">{artist}</h3>
+                    <h3 id="postText">{postText}</h3>
+                    <a href={songURL} title="Link To Song">♩♬♪ Listen Here♩♬♪</a>
+                    <h3 id="postUsername">Posted by @{username}</h3>
+
+                    {/* Comment button included in the same .post-content div */}
+                    <button onClick={toggleComments}>Show Comments</button>
                 </div>
+
                 {/* This code below should mean that if showComment is true we display this following code */}
                 {showComment && (
                     <div>
@@ -33,6 +36,7 @@ const Post = ({ artist, title, photo, username, songURL, comments }) => {
                     </div>
                 )}
             </div>
+
         </>
     )
 
