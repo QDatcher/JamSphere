@@ -4,17 +4,17 @@
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    background-color: #30638E;
+    background-color: #D1495B;
     border-radius: 8px;
     color: #003D5B;
-    padding: 5vw;
+    padding: 1rem;
 }
-
-#postPhoto img {
-    width: 100%;
+.post-content{
+    background-color: white;
     border-radius: 4px;
-    flex: 1;
-    margin-right: 2vw;
+    padding: 2rem;
+    flex:1;
+
 }
 
 .post-container h2 {
@@ -58,5 +58,5 @@
 }
 
 .post-container button:hover {
-    background-color: #D1495B;
+    background-color: #00798C;
 }

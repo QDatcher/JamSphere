@@ -15,7 +15,9 @@ button#create:hover {
     background-color: #D1495B;
 }
 
-
+body{
+    background-color: #FCF7F8;
+}
 
 /* Assuming the container holding the posts has a class named "posts-container" */
 .posts-container {
