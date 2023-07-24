@@ -28,7 +28,6 @@ const LoginPage = () => {
 
     e.preventDefault();
     const formData = {email, password};
-    console.log("formData",formData)
 
 
 
@@ -37,7 +36,6 @@ const LoginPage = () => {
         const { data } = await login({
             variables: {...formData},
         })
-        console.log("data ",data)
         Auth.login(data.login.token)
 
 
