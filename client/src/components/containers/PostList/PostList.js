@@ -9,7 +9,7 @@ const PostsList = ({posts}) => {
             
                 <div>
                     {posts.map((post) => {
-                        return <Post artist={post.artist} username={post.username} title={post.title} photo={post.photo} />
+                        return <Post key={post._id} artist={post.artist} username={post.username} title={post.title} photo={post.photo} />
                     })}
 
                 </div>
