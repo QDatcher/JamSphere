@@ -1,5 +1,5 @@
-import FriendList from "../FriendList/FriendsList"
-import PostsList from "../postContainer/PostList"
+import FriendList from "../FriendList1/FriendsList"
+import PostsList from "../PostList/PostList"
 import React, { useState } from 'react';
 import './ProfileWindow.css';
 
