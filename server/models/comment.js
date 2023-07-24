@@ -13,10 +13,6 @@ const commentSchema = new Schema(
       type: Schema.Types.ObjectId,
       ref: "Post",
     },
-    authorName: {
-      type: String,
-      required: true,
-    },
     commentContent: {
       type: String,
       required: true,
