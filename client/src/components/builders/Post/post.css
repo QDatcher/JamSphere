@@ -1,9 +1,8 @@
-
 .post-container {
     max-width: 90vw;
     margin: 0 auto;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-start;
     background-color: #30638E;
     border-radius: 8px;
@@ -11,24 +10,22 @@
     padding: 5vw;
 }
 
-
 #postPhoto img {
     width: 100%;
     border-radius: 4px;
+    flex: 1;
+    margin-right: 2vw;
 }
-
 
 .post-container h2 {
     font-size: 1.5vw;
     margin-bottom: 1vh;
 }
 
-
 .post-container h3 {
-    font-size: 1vw;
+    font-size: 1.2vw;
     margin-bottom: .5vh;
 }
-
 
 .post-container iframe {
     width: 100%;
@@ -36,6 +33,9 @@
     margin-bottom: 2vh;
 }
 
+.post-container h2#postUsername {
+    margin-top: auto;
+}
 
 .post-container button {
     background-color: #EDAE49;

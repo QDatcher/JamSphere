@@ -1,0 +1,25 @@
+button#create {
+    background-color: #EDAE49;
+    font-weight: bold;
+    color: white;
+    border: none;
+    padding: 2vh 3vw;
+    font-size: 1.5vw;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 3vw;
+    transition: background-color 0.3s ease;
+}
+
+button#create:hover {
+    background-color: #D1495B;
+}
+
+
+
+/* Assuming the container holding the posts has a class named "posts-container" */
+.posts-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
