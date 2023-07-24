@@ -44,3 +44,17 @@ export const CREATE_POST = gql
   }
 }`;
 
+
+export const ADD_FRIEND_MUTATION = gql`
+  mutation AddFriend($userId: ID!, $friendId: ID!) {
+    updateUser(
+      userId: $userId
+      friendList: { add: [$friendId] }
+    ) {
+      _id
+      friendList {
+        _id
+      }
+    }
+  }
+`;
