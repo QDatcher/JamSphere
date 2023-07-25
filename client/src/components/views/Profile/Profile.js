@@ -18,6 +18,7 @@ const Profile = () => {
             setUserId(decodedToken.data._id);
         }
     }, []);
+    console.log(userId);
 
     const { loading, error, data } = useQuery(YOUR_PROFILE, {
         variables: { userId }
@@ -42,7 +43,7 @@ const Profile = () => {
                         <h2>@{username}</h2>
                         <h2>{name}</h2>
                         <div>
-                        <img src={coverPicId ? profileImages[coverPicId] : ''} alt="Profile Picture"></img>
+                            <img src={coverPicId ? profileImages[coverPicId] : ''} alt="Profile Picture"></img>
                         </div>
                     </div>
                     <ProfileWindow userId={userId}></ProfileWindow>

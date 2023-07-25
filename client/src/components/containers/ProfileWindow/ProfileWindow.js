@@ -1,37 +1,40 @@
+import FriendList from "../FriendsList/FriendsList";
+import PostsList from "../PostList/PostList";
 import React, { useState } from 'react';
 import { useQuery } from '@apollo/client';
-import { GET_FRIENDS } from '../../../utils/queries'; 
+import { USER_POSTS, GET_FRIENDS } from '../../../utils/queries';
 import './ProfileWindow.css';
-import FriendList from "../FriendsList/FriendsList"
-import PostsList from "../PostList/PostList"
+import Auth from '../../../utils/auth';
 
+const ProfileWindow = ({userId}) => {
+    const [myPosts, setMyPosts] = useState(true);
+    const [myFriends, setMyFriends] = useState(false);
 
-const ProfileWindow = ({ userId }) => {
-    const [myPosts, setMyPosts] = useState(true)
-    const [myFriends, setMyFriends] = useState(false)
-    const userPosts = []
-
-    const { loading, error, data } = useQuery(GET_FRIENDS, {
+    
+    const { loading, error, friendData } = useQuery(GET_FRIENDS, {
         variables: { userId },
     });
 
-    const friends = data?.userFriends || [];
+    const friends = friendData?.userFriends || [];
 
     const toggleMyPosts = (e) => {
-        e.preventDefault()
-        setMyFriends(false)
-        setMyPosts(true)
+        e.preventDefault();
+        setMyFriends(false);
+        setMyPosts(true);
     }
 
     const toggleMyFriends = (e) => {
-        e.preventDefault()
-        setMyPosts(false)
-        setMyFriends(true)
+        e.preventDefault();
+        setMyPosts(false);
+        setMyFriends(true);
     }
-
-    if (loading) return <p>Loading...</p>;
-    if (error) return <p>Error :(</p>;
     
+
+    const { data } = useQuery(USER_POSTS, { variables:{userId: userId}});
+    console.log(data)
+    console.log(userId);
+;    const userPosts = data?.userPosts || [];
+
     return (
         <>
             <div>
@@ -42,17 +45,19 @@ const ProfileWindow = ({ userId }) => {
                     </ul>
                 </nav>
                 <section>
-                    {myPosts && (
-                        <PostsList posts={userPosts}></PostsList>
+                    {myPosts && !loading && (
+                        <PostsList posts={userPosts} />
                     )}
 
                     {myFriends && (
-                        <FriendList friends={friends}></FriendList>
+                        <FriendList friends={friends} />
                     )}
+
+                    {loading && <p>Loading...</p>}
                 </section>
             </div>
         </>
-    )
+    );
 }
 
 export default ProfileWindow;

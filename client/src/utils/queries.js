@@ -24,6 +24,24 @@ export const GET_POST = gql`
   }
 `;
 
+export const USER_POSTS = gql`
+  query UserPosts($userId: ID!) {
+    userPosts(userId: $userId) {
+      _id
+      authorId {
+        _id
+      }
+      artist
+      title
+      songURL
+      postText
+      comments {
+        _id
+      }
+      lastEditedAt
+    }
+  }
+`;
 
 export const GET_ALL_POSTS = gql`
   query GetAllPosts {
