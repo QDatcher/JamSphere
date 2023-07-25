@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { useMutation, gql } from '@apollo/client';
+import { useMutation, gql, useQuery } from '@apollo/client';
 import PostList from '../../containers/PostList/PostList';
 import Auth from '../../../utils/auth';
 import './Home.css';
+import { GET_POST } from '../../../utils/queries';
 
 // Import the CREATE_POST mutation from your file (assuming it's in a 'mutations.js' file)
 import { CREATE_POST } from '../../../utils/mutations';
@@ -84,6 +85,8 @@ const Home = () => {
     const toggleCreateForm = () => {
         setShowCreateForm((prevShowCreateForm) => !prevShowCreateForm);
     };
+    const { loading, postData } = useQuery(GET_POST);
+    console.log(postData);
 
     return (
         <>
@@ -91,7 +94,7 @@ const Home = () => {
                 {isLoggedIn ? (
                     <>
                         <button id="create" onClick={toggleCreateForm}>
-                        {showCreateForm ? '-' : '+'}
+                            {showCreateForm ? '-' : '+'}
                         </button>
                         {showCreateForm && isLoggedIn && (
                             <div className="create-form">
