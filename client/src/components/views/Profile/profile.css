@@ -14,8 +14,9 @@
     position: absolute;
     top: 12em;
     right: 0;
-    margin-right: 3vw;
-    margin-top: -15px; /* Adjust this value as needed to fine-tune the positioning */
+    margin-right: 5em;
+    margin-top: -9em; 
+    border: .5em solid #003D5B; 
 }
 
 
