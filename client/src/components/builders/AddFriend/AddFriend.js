@@ -37,7 +37,7 @@ const AddFriendButton = ({ currentUserId, friendId }) => {
                     {loading ? "Loading..." : isSuccess ? "Friend Added!" : "Add Friend"}
                 </button>
             )}
-            {!loading && !isSuccess && <p>Error adding friend. Try again.</p>}
+            {!loading && !isSuccess && <p></p>}
         </>
     );
 }

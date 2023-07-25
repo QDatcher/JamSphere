@@ -23,9 +23,10 @@ const Profile = () => {
         }
     }, []);
 
-    const { loading, data } = useQuery(friendId ? User_Profile : YOUR_PROFILE, {
-        variables: { userId: friendId },
+    const { loading, data } = useQuery(friendId !== currentUserId ? User_Profile : YOUR_PROFILE, {
+        variables: { userId: friendId !== currentUserId ? friendId : currentUserId },
     });
+    
 
     const user = data?.getUser || {};
 
@@ -33,7 +34,7 @@ const Profile = () => {
     if (Auth.loggedIn() && Auth.getProfile().data.userId === friendId) {
         return <Navigate to="/me" />;
     }
-
+    console.log(friendId)
     if (loading) {
         return <div>Loading...</div>;
     }
