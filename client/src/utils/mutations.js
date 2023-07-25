@@ -45,9 +45,9 @@ mutation createPost($authorId: ID!, $artist: String!, $title: String!, $songUrl:
 
 export const ADD_FRIEND = gql`
   mutation AddFriend($userId: ID!, $friendId: ID!) {
-    updateUser(
+    addFriend(
       userId: $userId
-      friendList: { add: [$friendId] }
+      friendId: $friendId
     ) {
       _id
       friendList {
