@@ -45,7 +45,7 @@ const Profile = () => {
                         <img src={coverPicId ? profileImages[coverPicId] : ''} alt="Profile Picture"></img>
                         </div>
                     </div>
-                    <ProfileWindow></ProfileWindow>
+                    <ProfileWindow userId={userId}></ProfileWindow>
                 </div>
             </div>
         </>

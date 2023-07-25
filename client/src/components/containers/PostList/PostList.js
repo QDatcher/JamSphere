@@ -8,8 +8,9 @@ const PostsList = ({posts}) => {
             <section>
             
                 <div>
-                    {posts.map((post) => {
-                        return <Post key={post._id} artist={post.artist} username={post.username} title={post.title} postText={post.postText} songURL={post.songURL} />
+                    {posts.map((post)  => {
+                        console.log(post._id)
+                        return <Post key={post._id} artist={post.artist} username={post.username} userId={post._id} title={post.title} postText={post.postText} songURL={post.songURL} />
                     })}
 
                 </div>

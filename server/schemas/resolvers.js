@@ -103,32 +103,6 @@ const resolvers = {
       throw new AuthenticationError('You need to be logged in!');
     },
     
-    // createComment: async (parent, { postId, commentContent }, context) => {
-    //   if (context.user) {
-    //     const newComment = await Comment.create({
-    //       authorId: context.user._id,
-    //       postId: context.posts._id,
-    //       commentContent: commentContent,
-    //   });
-    //     return Post.findOneAndUpdate(
-    //       { _id: postId },
-    //       {
-    //         $addToSet: {
-    //           comments: { 
-    //             comment: newComment._id,
-    //             commentContent, 
-    //             commentAuthor: context.user.username 
-    //           },
-    //         },
-    //       },
-    //       {
-    //         new: true,
-    //         runValidators: true,
-    //       }
-    //     );
-    //   }
-    //   throw new AuthenticationError('You need to be logged in!');
-    // },
 
     deletePost: async (parent, { postId }) => {
       // Implement the logic to delete a post by postId
