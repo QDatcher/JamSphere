@@ -12,14 +12,19 @@ The motivation behind the development of this application was to create an easy 
 
 
 ## Usage
+Homepage:
+<p align="center">
+    <img width="50%" height="30%" src="https://github.com/QDatcher/JamSphere/assets/127169775/075fb4a9-4875-421e-8692-bc948c99256f" />
+</p>
+Sign Up Page:
+<p align="center">
+    <img width="50%" height="30%" src="https://github.com/QDatcher/JamSphere/assets/127169775/11c6c308-a61a-48e4-98fe-54a018b3693b" />
+</p>
+Login Page:
+<p align="center">
+    <img width="50%"  height="30%" src="https://github.com/QDatcher/JamSphere/assets/127169775/5316d7a5-f1a7-4dcb-957d-d81eef58e369"/>
+</p>
 
-Provide instructions and examples for use. Include screenshots as needed.
-
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
-
-    ```md
-    ![alt text](assets/images/screenshot.png)
-    ```
 
 ## Credits
 
