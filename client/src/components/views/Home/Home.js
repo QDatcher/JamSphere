@@ -65,7 +65,6 @@ const Home = () => {
 
     const { loading, data } = useQuery(GET_ALL_POSTS);
     const posts = data?.getAllPosts || [];
-    console.log(posts);
 
     return (
         <>

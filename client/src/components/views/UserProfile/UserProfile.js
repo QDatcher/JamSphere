@@ -28,7 +28,7 @@ const Profile = () => {
     });
 
     const user = data?.getUser || {};
-    console.log(data)
+
     // navigate to personal profile page if user id is yours
     if (Auth.loggedIn() && Auth.getProfile().data.userId === friendId) {
         return <Navigate to="/me" />;

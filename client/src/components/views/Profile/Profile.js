@@ -18,7 +18,6 @@ const Profile = () => {
             setUserId(decodedToken.data._id);
         }
     }, []);
-    console.log(userId);
 
     const { loading, error, data } = useQuery(YOUR_PROFILE, {
         variables: { userId }
