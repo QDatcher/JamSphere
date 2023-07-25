@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import "./Nav.css";
 import Auth from '../../../utils/auth';
 import { useMutation } from '@apollo/client';
