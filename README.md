@@ -3,7 +3,7 @@
   <i align="center"> JamSphere🎶: Music To The Ears </i>
 </p>
 
-## What is JamsSphere🎶?
+## What is JamSphere🎶?
 
 `JamSphere🎶` is the ultimate platform for discovering new music. We give users the ability to post and share song recommendations from their favorite artists or genres.
 
@@ -33,7 +33,7 @@ Project made by Manuela Osorio, Ashley Trollinger, Quentin Dacher, Tanner Fink, 
 <a href="https://github.com/patrickdmorgan"><img src="https://avatars.githubusercontent.com/u/124013352?v=4" title="M" width="75" height="75"></a>
 
 ## Resources
-- [JamSphere website](Website URL) 
+- [JamSphere website](https://jamsphere-ad4807320222.herokuapp.com/) 
 - [Create React App](https://create-react-app.dev/)
 
 
