@@ -2,14 +2,20 @@ import FriendList from "../FriendsList/FriendsList";
 import PostsList from "../PostList/PostList";
 import React, { useState } from 'react';
 import { useQuery } from '@apollo/client';
-import { USER_POSTS } from '../../../utils/queries';
+import { USER_POSTS, GET_FRIENDS } from '../../../utils/queries';
 import './ProfileWindow.css';
 import Auth from '../../../utils/auth';
 
 const ProfileWindow = ({userId}) => {
     const [myPosts, setMyPosts] = useState(true);
     const [myFriends, setMyFriends] = useState(false);
-    const [friends, setFriend] = useState([]);
+
+    
+    const { loading, error, friendData } = useQuery(GET_FRIENDS, {
+        variables: { userId },
+    });
+
+    const friends = friendData?.userFriends || [];
 
     const toggleMyPosts = (e) => {
         e.preventDefault();
@@ -24,7 +30,7 @@ const ProfileWindow = ({userId}) => {
     }
     
 
-    const { loading, data } = useQuery(USER_POSTS, { variables:{userId: userId}});
+    const { data } = useQuery(USER_POSTS, { variables:{userId: userId}});
     console.log(data)
     console.log(userId);
 ;    const userPosts = data?.userPosts || [];

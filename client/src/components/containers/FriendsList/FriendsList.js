@@ -12,6 +12,7 @@ const FriendList = ({friends}) => {
                               key={friend._id} 
                               coverPicId={friend.coverPicId} 
                               username={friend.username} 
+                              friendId={friend._id} //Passing the friendId to the Friend component
                            />
                        );
                     })}

@@ -1,7 +1,7 @@
 import { gql } from '@apollo/client';
 
 export const GET_POST = gql`
-query GetPost($postId: ID!) {
+  query GetPost($postId: ID!) {
     getPost(postId: $postId) {
       _id
       title
@@ -10,10 +10,15 @@ query GetPost($postId: ID!) {
       postText
       authorId {
         _id
+        username
       }
-      lastEditedAt
       comments {
         _id
+        content
+        authorId {
+          _id
+          username
+        }
       }
     }
   }
@@ -85,6 +90,16 @@ query GetUser($userId: ID!) {
       friendList {
         _id
       }
+    }
+  }
+`;
+
+export const GET_FRIENDS = gql`
+  query GetFriends($userId: ID!) {
+    userFriends(userId: $userId) {
+      _id
+      username
+      coverPicId
     }
   }
 `;

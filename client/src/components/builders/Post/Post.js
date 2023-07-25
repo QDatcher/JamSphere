@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-
 import "./post.css"
 import { Link } from 'react-router-dom';
 
@@ -7,7 +6,7 @@ import CommentsContainer from '../../containers/CommentsContainer/CommentsContai
 import Auth from '../../../utils/auth';
 
 
-const Post = ({ artist, title, postText, username, songURL, comments }) => {
+const Post = ({ artist, title, postText, username, userId, songURL, comments }) => {
   const isLoggedIn = Auth.loggedIn();
   const [showComment, setShowComment] = useState(false);
   const [showCommentForm, setShowCommentForm] = useState(false); // New state for comment form visibility
@@ -22,7 +21,6 @@ const Post = ({ artist, title, postText, username, songURL, comments }) => {
       setShowComment(true);
     }
   };
-
 
   const toggleCommentForm = (e) => {
     e.preventDefault();
@@ -39,8 +37,7 @@ const Post = ({ artist, title, postText, username, songURL, comments }) => {
           <a href={songURL} title="Link To Song">
             ♩♬♪ Listen Here♩♬♪
           </a>
-          <h3 id="postUsername">Posted by @{username}</h3>
-
+          <h3 id="postUsername">Posted by <Link to={`/profile/${userId}`}>@{username}</Link></h3>
           {/* Comment button included in the same .post-content div */}
           <button onClick={toggleComments}>Show Comments</button>
           <button onClick={toggleCommentForm}>
