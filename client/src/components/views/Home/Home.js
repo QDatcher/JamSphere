@@ -1,37 +1,16 @@
 import React, { useState } from 'react';
-import { useMutation, gql } from '@apollo/client';
+import { useMutation, gql, useQuery } from '@apollo/client';
 import PostList from '../../containers/PostList/PostList';
 import Auth from '../../../utils/auth';
 import './Home.css';
+import { GET_ALL_POSTS } from '../../../utils/queries';
 
 // Import the CREATE_POST mutation from your file (assuming it's in a 'mutations.js' file)
 import { CREATE_POST } from '../../../utils/mutations';
 
+
 const Home = () => {
     const isLoggedIn = Auth.loggedIn();
-    const posts = [
-        {
-            _id: 1,
-            artist: 'Beyonce',
-            title: 'Ring on it',
-            postText: 'I love this song so much it is so my jam',
-            songURL: '',
-        },
-        {
-            _id: 2,
-            artist: 'Beyonce',
-            title: 'Ring on it',
-            postText: 'I love this song so much it is so my jam',
-            songURL: '',
-        }, // Placeholder for post 2 (modify it with actual data)
-        {
-            _id: 3,
-            artist: 'Beyonce',
-            title: 'Ring on it',
-            postText: 'I love this song so much it is so my jam',
-            songURL: '',
-        }, // Placeholder for post 3 (modify it with actual data)
-    ];
 
     const [showCreateForm, setShowCreateForm] = useState(true);
     const [formData, setFormData] = useState({
@@ -41,7 +20,7 @@ const Home = () => {
         songURL: '',
     });
 
-    const [createPost, { error, data }] = useMutation(CREATE_POST);
+    const [createPost, { error }] = useMutation(CREATE_POST);
 
     const handleInputChange = (event) => {
         const { name, value } = event.target;
@@ -63,7 +42,6 @@ const Home = () => {
                 },
             });
 
-            console.log(data)
 
             // Handle successful post creation (if needed)
 
@@ -85,13 +63,16 @@ const Home = () => {
         setShowCreateForm((prevShowCreateForm) => !prevShowCreateForm);
     };
 
+    const { loading, data } = useQuery(GET_ALL_POSTS);
+    const posts = data?.getAllPosts || [];
+
     return (
         <>
             <div className="parentContainer">
                 {isLoggedIn ? (
                     <>
                         <button id="create" onClick={toggleCreateForm}>
-                        {showCreateForm ? '-' : '+'}
+                            {showCreateForm ? '-' : '+'}
                         </button>
                         {showCreateForm && isLoggedIn && (
                             <div className="create-form">

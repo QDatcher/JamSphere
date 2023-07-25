@@ -39,6 +39,7 @@ type AuthData {
 type Query {
   getUser(userId: ID!): User
   getPost(postId: ID!): Post
+  getAllPosts: [Post]
   userPosts(userId: ID!): [Post]
   userFriends(userId: ID!): [User]
   getComment(commentId: ID!): Comment

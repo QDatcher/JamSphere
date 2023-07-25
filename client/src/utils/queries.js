@@ -19,6 +19,26 @@ query GetPost($postId: ID!) {
   }
 `;
 
+export const GET_ALL_POSTS = gql`
+  query GetAllPosts {
+    getAllPosts {
+      _id
+      title
+      artist
+      songURL
+      postText
+      authorId {
+        _id
+      }
+      lastEditedAt
+      comments {
+        _id
+      }
+    }
+  }
+`;
+
+
 export const YOUR_PROFILE = gql`
   query GetUser($userId: ID!) {
     getUser(userId: $userId) {
