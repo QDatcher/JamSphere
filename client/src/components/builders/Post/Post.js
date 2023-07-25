@@ -22,7 +22,6 @@ const Post = ({ artist, title, postText, username, userId, songURL, comments }) 
     }
   };
 
-
   const toggleCommentForm = (e) => {
     e.preventDefault();
     setShowCommentForm((prevShowCommentForm) => !prevShowCommentForm); // Toggle comment form visibility
@@ -39,7 +38,6 @@ const Post = ({ artist, title, postText, username, userId, songURL, comments }) 
             ♩♬♪ Listen Here♩♬♪
           </a>
           <h3 id="postUsername">Posted by <Link to={`/profile/${userId}`}>@{username}</Link></h3>
-
           {/* Comment button included in the same .post-content div */}
           <button onClick={toggleComments}>Show Comments</button>
           <button onClick={toggleCommentForm}>

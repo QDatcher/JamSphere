@@ -10,7 +10,7 @@ const AddFriendButton = ({ currentUserId, friendId }) => {
         variables: { userId: friendId },
         skip: true  // Skip the initial query and only use this for refetching
     });
-
+    console.log(currentUserId)
     const handleAddFriend = async () => {
         if (friendId !== currentUserId) {
             try {
@@ -19,7 +19,9 @@ const AddFriendButton = ({ currentUserId, friendId }) => {
                         userId: currentUserId,
                         friendId: friendId,
                     },
+                    
                 });
+                
                 setIsSuccess(true);  // Set success state to true after a successful mutation
                 refetch();  // Refetch the user's profile data
             } catch (error) {
