@@ -3,7 +3,7 @@
   <i align="center"> JamSphere🎶: Music To The Ears </i>
 </p>
 
-## What is JamsSphere🎶?
+## What is JamSphere🎶?
 
 `JamSphere🎶` is the ultimate platform for discovering new music. We give users the ability to post and share song recommendations from their favorite artists or genres.
 
