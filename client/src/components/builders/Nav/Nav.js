@@ -19,19 +19,19 @@ const Nav = () => {
                     {isLoggedIn ? (
                         <>
                             <li>
-                                <a href="/profile" id="profile">Profile</a>
+                                <Link to="/profile" id="profile">Profile</Link>
                             </li>
                             <li>
-                                <a href="./home" onClick={Auth.logout} id="logout">Logout</a>
+                                <Link to="./home" onClick={Auth.logout} id="logout">Logout</Link>
                             </li>
                         </>
                     ) : (
                         <>
                             <li>
-                                <a href="/signup" id="signup">Sign Up</a>
+                                <Link to="/signup" id="signup">Sign Up</Link>
                             </li>
                             <li>
-                                <a href="/login" id="login">Log In</a>
+                                <Link to="/login" id="login">Log In</Link>
                             </li>
                         </>
                     )}
