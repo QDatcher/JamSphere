@@ -41,7 +41,7 @@ const Home = () => {
         songURL: '',
     });
 
-    const [createPost, { loading, error, data }] = useMutation(CREATE_POST);
+    const [createPost, { error, data }] = useMutation(CREATE_POST);
 
     const handleInputChange = (event) => {
         const { name, value } = event.target;
@@ -51,15 +51,19 @@ const Home = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
 
+
         try {
             const { data } = await createPost({
                 variables: {
+                    authorId: Auth.getProfile().data._id,
                     title: formData.title,
                     songUrl: formData.songURL,
                     artist: formData.artist,
                     postText: formData.postText,
                 },
             });
+
+            console.log(data)
 
             // Handle successful post creation (if needed)
 

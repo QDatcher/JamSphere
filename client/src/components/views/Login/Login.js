@@ -8,8 +8,7 @@ import Auth from '../../../utils/auth';
 const LoginPage = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    console.log(email)
-    console.log(password)
+
 
     const [login, { error }] = useMutation(LOGIN_USER)
     // const [formState, setFormState] = useState({ email: '', password: '' });
@@ -29,7 +28,6 @@ const LoginPage = () => {
 
     e.preventDefault();
     const formData = {email, password};
-    console.log("formData",formData)
 
 
 
@@ -38,7 +36,6 @@ const LoginPage = () => {
         const { data } = await login({
             variables: {...formData},
         })
-        console.log("data ",data)
         Auth.login(data.login.token)
 
 
