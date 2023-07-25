@@ -22,6 +22,9 @@ To add a screenshot, create an `assets/images` folder in your repository and upl
     ```
 
 ## Credits
+
+Project made by Manuela Osorio, Ashley Trollinger, Quentin Dacher, Tanner Fink, Stacy Amoah, and Patrick Morgan
+
 <a href="https://github.com/jrocksymphonia"><img src="https://avatars.githubusercontent.com/u/122930110?v=4" title="M" width="75" height="75"></a>
 <a href="https://github.com/ashleytrollinger"><img src="https://avatars.githubusercontent.com/u/123582742?v=4" title="M" width="75" height="75"></a>
 <a href="https://github.com/QDatcher"><img src="https://avatars.githubusercontent.com/u/81837675?v=4" title="M" width="75" height="75"></a>
