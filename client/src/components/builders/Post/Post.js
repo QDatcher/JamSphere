@@ -37,7 +37,7 @@ const Post = ({ artist, title, postText, username, userId, songURL, comments }) 
           <a href={songURL} title="Link To Song">
             ♩♬♪ Listen Here♩♬♪
           </a>
-          <h3 id="postUsername">Posted by <Link to={`/profile/${userId}`}>@{username}</Link></h3>
+          <h3 id="postUsername"><Link to={`/profile/${userId}`}>See User Profile</Link></h3>
         </div>
       </div>
     </>
