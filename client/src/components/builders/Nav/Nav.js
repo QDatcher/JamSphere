@@ -2,6 +2,7 @@ import React from 'react';
 import "./Nav.css";
 import Auth from '../../../utils/auth';
 import { useMutation } from '@apollo/client';
+import { Link } from 'react-router-dom';
 
 const Nav = () => {
 
