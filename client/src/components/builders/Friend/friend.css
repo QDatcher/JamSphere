@@ -1,9 +1,51 @@
-.profile {
+/* Assuming parent container class is .friend-container */
+
+.friend-container {
+    max-width: 90vw;
+    margin-bottom: 1em;
     display: flex;
-    align-items: center;
+    flex-direction: row;
+    align-items: flex-start;
+    background-color: #D1495B;
+    border-radius: 8px;
+    color: #003D5B;
+    padding: 1rem;
 }
 
-.profile img {
-    margin-right: 10px;
-    /*Spacing between the picture and username*/
+.friend-picture-container {
+    width: 20%;
+    position: relative;
+    margin-right: 1em;
+    /* Add any styles related to the picture container here */
+}
+
+.friend-picture-container img {
+    /* Add any styles related to the profile picture here */
+    width: 100%;
+    border-radius: 50%;
+    border: 0.1em solid #003D5B;
+    /* To make the picture circular, adjust the border-radius accordingly */
+}
+
+.friend-info {
+    flex: 1;
+    padding-left: 1rem;
+    /* To create some space between the profile picture and friend info */
+}
+
+.friend-username {
+    font-size: 3em;
+    margin-bottom: 1vh;
+}
+
+.friend-link {
+    font-size: 1.8em;
+    margin-bottom: 0.5vh;
+    color: #003D5B;
+    text-decoration: none;
+}
+
+.friend-link:hover {
+    text-decoration: underline;
+    color: #003D5B;
 }

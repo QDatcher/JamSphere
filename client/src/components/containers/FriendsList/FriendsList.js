@@ -4,7 +4,7 @@ const FriendList = ({friends}) => {
     return (
         <>
             <section>
-                <h3>Friends List</h3>
+
                 <div>
                     {friends.map((friend) => {
                        return (
