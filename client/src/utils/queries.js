@@ -21,7 +21,7 @@ query GetPost($postId: ID!) {
 
 export const GET_ALL_POSTS = gql`
   query GetAllPosts {
-    getPosts {
+    getAllPosts {
       _id
       title
       artist
