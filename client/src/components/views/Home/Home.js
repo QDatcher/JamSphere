@@ -12,7 +12,6 @@ import { CREATE_POST } from '../../../utils/mutations';
 const Home = () => {
     const isLoggedIn = Auth.loggedIn();
 
-const posts= [];
     const [showCreateForm, setShowCreateForm] = useState(true);
     const [formData, setFormData] = useState({
         artist: '',
@@ -21,7 +20,7 @@ const posts= [];
         songURL: '',
     });
 
-    const [createPost, { error, data }] = useMutation(CREATE_POST);
+    const [createPost, { error }] = useMutation(CREATE_POST);
 
     const handleInputChange = (event) => {
         const { name, value } = event.target;
@@ -64,9 +63,9 @@ const posts= [];
         setShowCreateForm((prevShowCreateForm) => !prevShowCreateForm);
     };
 
-    const { loading, postData } = useQuery(GET_ALL_POSTS);
-    console.log(postData);
-
+    const { loading, data } = useQuery(GET_ALL_POSTS);
+    const posts = data?.getAllPosts || [];
+    console.log(posts);
 
     return (
         <>
