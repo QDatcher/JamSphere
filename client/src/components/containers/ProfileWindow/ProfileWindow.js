@@ -4,18 +4,31 @@ import React, { useState } from 'react';
 import { useQuery } from '@apollo/client';
 import { USER_POSTS, GET_FRIENDS } from '../../../utils/queries';
 import './ProfileWindow.css';
-import Auth from '../../../utils/auth';
 
-const ProfileWindow = ({userId}) => {
+
+const ProfileWindow = ({ userId }) => {
     const [myPosts, setMyPosts] = useState(true);
     const [myFriends, setMyFriends] = useState(false);
 
-    
-    const { loading, error, friendData } = useQuery(GET_FRIENDS, {
+    const {
+        loading: loadingFriends,
+        error: errorFriends,
+        data: friendData,
+    } = useQuery(GET_FRIENDS, {
+        variables: { userId },
+    });
+
+    const {
+        loading: loadingPosts,
+        error: errorPosts,
+        data: postData,
+    } = useQuery(USER_POSTS, {
         variables: { userId },
     });
 
     const friends = friendData?.userFriends || [];
+    const userPosts = postData?.userPosts || [];
+
 
     const toggleMyPosts = (e) => {
         e.preventDefault();
@@ -28,12 +41,7 @@ const ProfileWindow = ({userId}) => {
         setMyPosts(false);
         setMyFriends(true);
     }
-    
 
-    const { data } = useQuery(USER_POSTS, { variables:{userId: userId}});
-    console.log(data)
-    console.log(userId);
-;    const userPosts = data?.userPosts || [];
 
     return (
         <>
@@ -45,15 +53,17 @@ const ProfileWindow = ({userId}) => {
                     </ul>
                 </nav>
                 <section>
-                    {myPosts && !loading && (
+
+                    {myPosts && !loadingPosts && (
                         <PostsList posts={userPosts} />
                     )}
 
-                    {myFriends && (
+                    {myFriends && !loadingFriends && (
                         <FriendList friends={friends} />
                     )}
 
-                    {loading && <p>Loading...</p>}
+                    {(loadingPosts || loadingFriends) && <p>Loading...</p>}
+
                 </section>
             </div>
         </>
