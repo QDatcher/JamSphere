@@ -1,57 +1,57 @@
-import FriendList from "../FriendsList/FriendsList"
-import PostsList from "../PostList/PostList"
+import FriendList from "../FriendsList/FriendsList";
+import PostsList from "../PostList/PostList";
 import React, { useState } from 'react';
+import { useQuery } from '@apollo/client';
+import { USER_POSTS } from '../../../utils/queries';
 import './ProfileWindow.css';
+import Auth from '../../../utils/auth';
 
-
-const ProfileWindow = () => {
-    const [myPosts, setMyPosts] = useState(true)
-    const [myFriends, setMyFriends] = useState(false)
-    const [friends, setFriend] = useState([])
-    const userPosts = []
-
+const ProfileWindow = ({userId}) => {
+    const [myPosts, setMyPosts] = useState(true);
+    const [myFriends, setMyFriends] = useState(false);
+    const [friends, setFriend] = useState([]);
 
     const toggleMyPosts = (e) => {
-        e.preventDefault()
-
-        // setMyFavorites(false)
-         setMyFriends(false)
-         setMyPosts(true)
+        e.preventDefault();
+        setMyFriends(false);
+        setMyPosts(true);
     }
 
     const toggleMyFriends = (e) => {
-        e.preventDefault()
-
-         setMyPosts(false)
-        // setMyFavorites(false)
-         setMyFriends(true)
+        e.preventDefault();
+        setMyPosts(false);
+        setMyFriends(true);
     }
     
+
+    const { loading, data } = useQuery(USER_POSTS, { variables:{userId: userId}});
+    console.log(data)
+    console.log(userId);
+;    const userPosts = data?.userPosts || [];
 
     return (
         <>
             <div>
+                <nav>
+                    <ul>
+                        <li><button onClick={toggleMyPosts}>My Posts</button></li>
+                        <li><button onClick={toggleMyFriends}>Friends</button></li>
+                    </ul>
+                </nav>
+                <section>
+                    {myPosts && !loading && (
+                        <PostsList posts={userPosts} />
+                    )}
 
-                        <nav>
-                            <ul>
-                            <li><button onClick={toggleMyPosts}>My Posts</button></li>
-                            <li><button onClick={toggleMyFriends}>Friends</button></li>
-                            </ul>
-                        </nav>
-                        <section>
-                        {myPosts && (
-                            <PostsList posts={userPosts}></PostsList>
-                        )}
+                    {myFriends && (
+                        <FriendList friends={friends} />
+                    )}
 
-                        {myFriends && (
-                            <FriendList friends={friends}></FriendList>
-                        )}
-                        </section>
-              
+                    {loading && <p>Loading...</p>}
+                </section>
             </div>
-
         </>
-    )
+    );
 }
 
 export default ProfileWindow;
