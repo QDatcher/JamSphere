@@ -5,7 +5,6 @@ import { useQuery } from '@apollo/client';
 import { YOUR_PROFILE, User_Profile } from '../../../utils/queries';
 import Auth from '../../../utils/auth';
 import jwt_decode from 'jwt-decode';
-import ProfileWindow from '../../containers/ProfileWindow/ProfileWindow';
 import AddFriendButton from '../../builders/AddFriend/AddFriend';
 import Profile1 from '../../../images/Profile1.png';
 import Profile2 from '../../../images/Profile2.png';
@@ -28,8 +27,8 @@ const Profile = () => {
         variables: { userId: friendId },
     });
 
-    const user = data?.getUser || data?.me || {};
-
+    const user = data?.getUser || {};
+    console.log(data)
     // navigate to personal profile page if user id is yours
     if (Auth.loggedIn() && Auth.getProfile().data.userId === friendId) {
         return <Navigate to="/me" />;
