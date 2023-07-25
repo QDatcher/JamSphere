@@ -9,13 +9,14 @@
 
 /* Apply styles to the profile picture */
 .profile-container img {
-    width: 30%;
+    width: 18%;
     border-radius: 50%;
     position: absolute;
     top: 12em;
     right: 0;
-    margin-right: 3vw;
-    margin-top: -15px; /* Adjust this value as needed to fine-tune the positioning */
+    margin-right: 5em;
+    margin-top: -9em; 
+    border: .5em solid #003D5B; 
 }
 
 
@@ -45,4 +46,31 @@ em{
     background: linear-gradient(to right, #D1495B, #00798C, #003D5B);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+@media (max-width: 768px) {
+    .profile-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-container img {
+        position: static;
+        width: 60%;
+        margin-right: 0;
+        margin-top: 1em;
+    }
+
+    .profile-info {
+        font-size: 1.5em;
+        padding: 3vw;
+    }
+
+    .profile-info h2 {
+        font-size: 2em;
+        margin-left: 0;
+    }
+
+    #username {
+        font-size: 3em;
+    }
 }

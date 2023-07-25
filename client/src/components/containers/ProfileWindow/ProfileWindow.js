@@ -5,6 +5,7 @@ import { useQuery } from '@apollo/client';
 import { USER_POSTS, GET_FRIENDS } from '../../../utils/queries';
 import './ProfileWindow.css';
 
+
 const ProfileWindow = ({ userId }) => {
     const [myPosts, setMyPosts] = useState(true);
     const [myFriends, setMyFriends] = useState(false);
@@ -28,6 +29,7 @@ const ProfileWindow = ({ userId }) => {
     const friends = friendData?.userFriends || [];
     const userPosts = postData?.userPosts || [];
 
+
     const toggleMyPosts = (e) => {
         e.preventDefault();
         setMyFriends(false);
@@ -40,6 +42,7 @@ const ProfileWindow = ({ userId }) => {
         setMyFriends(true);
     }
 
+
     return (
         <>
             <div>
@@ -50,6 +53,7 @@ const ProfileWindow = ({ userId }) => {
                     </ul>
                 </nav>
                 <section>
+
                     {myPosts && !loadingPosts && (
                         <PostsList posts={userPosts} />
                     )}
@@ -59,6 +63,7 @@ const ProfileWindow = ({ userId }) => {
                     )}
 
                     {(loadingPosts || loadingFriends) && <p>Loading...</p>}
+
                 </section>
             </div>
         </>
